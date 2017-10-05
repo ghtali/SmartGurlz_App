@@ -27,3 +27,9 @@ repositories {
         url 'https://maven.google.com'
     }
 }
+
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
