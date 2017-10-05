@@ -28,8 +28,3 @@ repositories {
     }
 }
 
-android {
-    lintOptions {
-        abortOnError false
-    }
-}
