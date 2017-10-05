@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ghtali/SmartGurlz_App.svg?branch=master)](https://travis-ci.org/sindresorhus/pageres)
+[![Build Status](https://travis-ci.org/ghtali/SmartGurlz_App.svg?branch=master)](https://travis-ci.org/SmartGurlz_App/pageres)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.artit-k/license-fragment-support-v4/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.artit-k/license-fragment-support-v4)
 
 <a href="https://www.smartgurlz.eu//">
