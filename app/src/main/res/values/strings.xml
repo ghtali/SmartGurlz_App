@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">SmartGurlz</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Emma</string>
+    <string name="slide_1_desc">Slide_1</string>
+
+    <string name="slide_2_title">Emma</string>
+    <string name="slide_2_desc">Slide_2</string>
+
+    <string name="slide_3_title">Emma</string>
+    <string name="slide_3_desc">Slide_3</string>
+
+    <string name="slide_4_title">Emma</string>
+    <string name="slide_4_desc">Slide_4</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>
