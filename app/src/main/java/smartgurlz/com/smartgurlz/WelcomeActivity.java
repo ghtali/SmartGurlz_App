@@ -23,6 +23,10 @@ import smartgurlz.com.smartgurlz.MainActivity;
 import smartgurlz.com.smartgurlz.PrefManager;
 import smartgurlz.com.smartgurlz.R;
 
+/**
+ * Created by Ali on 27/10/2017.
+ */
+
 public class WelcomeActivity extends FragmentActivity {
 
     private ViewPager viewPager;
@@ -121,7 +125,7 @@ public class WelcomeActivity extends FragmentActivity {
     }
 
     private void launchHomeScreen() {
-        prefManager.setFirstTimeLaunch(false);
+        prefManager.setFirstTimeLaunch(true);
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
         finish();
     }
