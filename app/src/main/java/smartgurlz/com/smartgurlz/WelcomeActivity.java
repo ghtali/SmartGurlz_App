@@ -40,6 +40,15 @@ public class WelcomeActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_welcome);
 
+        layouts = new int[]{
+                R.layout.slide1;
+                R.layout.slide2;
+                R.layout.slide3;
+                R.layout.slide4;
+
+        
+        }
+
 
 
 
