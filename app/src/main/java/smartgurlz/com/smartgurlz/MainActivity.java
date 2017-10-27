@@ -17,14 +17,14 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-/*
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this, .class);
+                Intent i = new Intent(MainActivity.this, WelcomeActivity.class);
                 startActivity(i);
                 finish();
             }
-        }, TIME_OUT);*/
+        }, TIME_OUT);
     }
 }
