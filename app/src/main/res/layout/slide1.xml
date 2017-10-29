@@ -20,14 +20,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/slide_1_title"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/slide_1_desc"
         android:textAlignment="center"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/black"/>
 
 </LinearLayout>
 </RelativeLayout>
