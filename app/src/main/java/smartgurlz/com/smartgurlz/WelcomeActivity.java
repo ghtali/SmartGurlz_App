@@ -2,14 +2,13 @@ package smartgurlz.com.smartgurlz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +17,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import smartgurlz.com.smartgurlz.MainActivity;
-import smartgurlz.com.smartgurlz.PrefManager;
-import smartgurlz.com.smartgurlz.R;
 
 /**
  * Created by Ali on 27/10/2017.
@@ -39,6 +34,7 @@ public class WelcomeActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
@@ -125,7 +121,7 @@ public class WelcomeActivity extends FragmentActivity {
     }
 
     private void launchHomeScreen() {
-        prefManager.setFirstTimeLaunch(true);
+        prefManager.setFirstTimeLaunch(true); //Setting to the true just for test (it should be false)
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
         finish();
     }
