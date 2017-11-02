@@ -29,7 +29,7 @@ public class WelcomeActivity extends FragmentActivity {
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, btnNext;
+    private Button btnNext;
     private PrefManager prefManager;
 
     @Override
@@ -53,8 +53,7 @@ public class WelcomeActivity extends FragmentActivity {
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnSkip = (Button) findViewById(R.id.btn_skip);
-        btnNext = (Button) findViewById(R.id.btn_next);
+        btnNext = (Button) findViewById(R.id.btnNextImg);
 
 
         // layouts of all welcome sliders
@@ -75,12 +74,6 @@ public class WelcomeActivity extends FragmentActivity {
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
-        btnSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchHomeScreen();
-            }
-        });
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,13 +128,11 @@ public class WelcomeActivity extends FragmentActivity {
 
             // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT
-                btnNext.setText(getString(R.string.start));
-                btnSkip.setVisibility(View.GONE);
+                // last page. make button text to GOT IT // Text has been removed and replaced by images
+                btnNext.setBackgroundResource(R.drawable.btnnext);
             } else {
                 // still pages are left
-                btnNext.setText(getString(R.string.next));
-                btnSkip.setVisibility(View.VISIBLE);
+                btnNext.setBackgroundResource(R.drawable.playbtn);
             }
         }
 
