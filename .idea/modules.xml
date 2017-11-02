@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SmartGurlz.iml" filepath="$PROJECT_DIR$/SmartGurlz.iml" />
+      <module fileurl="file://C:\Users\Ana-Maria\AndroidStudioProjects\SmartGurlz_App\SmartGurlz.iml" filepath="C:\Users\Ana-Maria\AndroidStudioProjects\SmartGurlz_App\SmartGurlz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartGurlz_App.iml" filepath="$PROJECT_DIR$/SmartGurlz_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
