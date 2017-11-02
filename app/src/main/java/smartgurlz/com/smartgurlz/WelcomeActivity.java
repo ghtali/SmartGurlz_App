@@ -30,6 +30,7 @@ public class WelcomeActivity extends FragmentActivity {
     private TextView[] dots;
     private int[] layouts;
     private Button btnNext;
+    private Button btnPlay;
     private PrefManager prefManager;
 
     @Override
@@ -54,6 +55,8 @@ public class WelcomeActivity extends FragmentActivity {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         btnNext = (Button) findViewById(R.id.btnNextImg);
+        btnPlay = (Button) findViewById(R.id.btnPlay);
+
 
 
         // layouts of all welcome sliders
@@ -129,10 +132,11 @@ public class WelcomeActivity extends FragmentActivity {
             // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
                 // last page. make button text to GOT IT // Text has been removed and replaced by images
-                btnNext.setBackgroundResource(R.drawable.btnnext);
+
+                btnNext.setVisibility(View.INVISIBLE);
             } else {
                 // still pages are left
-                btnNext.setBackgroundResource(R.drawable.playbtn);
+                btnNext.setText(getString(R.string.next));
             }
         }
 
