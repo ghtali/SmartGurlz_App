@@ -15,9 +15,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="587dp"
+            android:layout_width="470dp"
             android:layout_height="378dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/emma"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
