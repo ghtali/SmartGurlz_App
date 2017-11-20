@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.Company.SmartGurlz.UnityPlayerActivity;
+
 /**
  * Created by Ali on 27/10/2017.
  */
@@ -90,6 +92,8 @@ public class WelcomeActivity extends FragmentActivity {
                 } else {
                     launchHomeScreen();
                 }
+                Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
+                startActivity(intent);
             }
         });
     }

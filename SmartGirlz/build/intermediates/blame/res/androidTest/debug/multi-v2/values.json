@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/zayd/StudioProjects/SmartGurlz_App/SmartGirlz/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/zayd/StudioProjects/SmartGurlz_App/SmartGirlz/build/intermediates/bundles/debug/res/values/values.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,103",
+                        "endLines": "2,4",
+                        "endColumns": "47,8",
+                        "endOffsets": "98,196"
+                    },
+                    "to": {
+                        "startLines": "2,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,147",
+                        "endLines": "2,5",
+                        "endColumns": "47,8",
+                        "endOffsets": "98,240"
+                    }
+                },
+                {
+                    "source": "/Users/zayd/.gradle/caches/transforms-1/files-1.1/OVRPlugin.aar/13bc7a64b7fbec4d4aa4eab871cf4c1e/res/values/values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "2",
+                        "startOffsets": "55",
+                        "endColumns": "41",
+                        "endOffsets": "94"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "103",
+                        "endColumns": "43",
+                        "endOffsets": "142"
+                    }
+                }
+            ]
+        }
+    ]
+}
