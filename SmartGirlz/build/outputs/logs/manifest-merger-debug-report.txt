@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:2:70-102
 		INJECTED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml
@@ -121,33 +121,37 @@ uses-permission#android.permission.INTERNET
 ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:18:3-65
 	android:name
 		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:18:20-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:19:3-68
+	android:name
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:19:20-66
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:19:3-106
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:20:3-106
 	android:maxSdkVersion
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:19:77-103
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:20:77-103
 	android:name
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:19:20-76
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:20:20-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:20:3-105
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:21:3-105
 	android:maxSdkVersion
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:20:76-102
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:21:76-102
 	android:name
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:20:20-75
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:21:20-75
 uses-feature#android.hardware.touchscreen
-ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:21:3-88
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:22:3-88
 	android:required
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:21:61-85
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:22:61-85
 	android:name
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:21:17-60
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:22:17-60
 uses-feature#android.hardware.touchscreen.multitouch
-ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:22:3-99
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:23:3-99
 	android:required
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:22:72-96
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:23:72-96
 	android:name
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:22:17-71
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:23:17-71
 uses-feature#android.hardware.touchscreen.multitouch.distinct
-ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:23:3-108
+ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:24:3-108
 	android:required
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:23:81-105
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:24:81-105
 	android:name
-		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:23:17-80
+		ADDED from /usr/local/Cellar/git/2.13.1/SmartGurlz/SmartGirlz/src/main/AndroidManifest.xml:24:17-80

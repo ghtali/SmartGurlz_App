@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Company.SmartGurlz.UnityPlayerActivity;
 
@@ -89,13 +90,41 @@ public class WelcomeActivity extends FragmentActivity {
                 if (current < layouts.length) {
                     // move to next screen
                     viewPager.setCurrentItem(current);
-                } else {
+                }
+                else {
                     launchHomeScreen();
                 }
-                Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
-                startActivity(intent);
+    /*         Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
+                startActivity(intent);*/
+            }
+
+        });
+
+
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == btnPlay) {
+
+                    Toast.makeText(WelcomeActivity.this, "Hello Test", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
+                    startActivity(intent);
+                }
+/*                    Intent intent = new Intent(WelcomeActivity.this, com.Company.SmartGurlz.UnityPlayerActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    Bundle extras = getIntent().getExtras();
+                    if (extras != null)
+                        intent.putExtras(extras);
+                    startActivity(intent);
+                    }*/
+                    finish();
+
             }
         });
+
+
+
     }
 
     private void addBottomDots(int currentPage) {
@@ -138,6 +167,7 @@ public class WelcomeActivity extends FragmentActivity {
                 // last page. make button text to GOT IT // Text has been removed and replaced by images
 
                 btnNext.setVisibility(View.INVISIBLE);
+                btnPlay.setVisibility(View.VISIBLE);
             } else {
                 // still pages are left
                 btnNext.setText(getString(R.string.next));

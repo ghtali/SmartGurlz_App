@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     package="smartgurlz.com.smartgurlz">
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application
         tools:replace="android:icon,android:theme"
         android:allowBackup="true"
@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".GameActivity"></activity>
+        <activity android:name="com.Company.SmartGurlz.UnityPlayerActivity"></activity>
     </application>
 
 </manifest>
