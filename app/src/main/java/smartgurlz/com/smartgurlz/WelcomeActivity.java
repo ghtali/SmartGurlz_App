@@ -1,27 +1,17 @@
 package smartgurlz.com.smartgurlz;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SmartGurlz.app.UnityPlayerActivity;
 
-//import com.Company.SmartGurlz.UnityPlayerActivity;
 
 /**
  * Created by Ali on 27/10/2017.
@@ -29,14 +19,13 @@ import com.SmartGurlz.app.UnityPlayerActivity;
 
 public class WelcomeActivity extends FragmentActivity {
 
-    private ViewPager viewPager;
-    private MyViewPagerAdapter myViewPagerAdapter;
-    private LinearLayout dotsLayout;
-    private TextView[] dots;
-    private int[] layouts;
-    private Button btnNext;
+
+    public Button btnNext12;
     private Button btnPlay;
     private PrefManager prefManager;
+    private int clickcount=0;
+    public TextView textBubble;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,51 +46,28 @@ public class WelcomeActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_welcome);
 
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnNext = (Button) findViewById(R.id.btnNextImg);
+        btnNext12 = (Button) findViewById(R.id.btnNext12);
         btnPlay = (Button) findViewById(R.id.btnPlay);
+        textBubble = (TextView) findViewById(R.id.textBubble);
+
+
+        if (clickcount == 0) {
+            textBubble.setText("Hi, I’m Emma.I love to paint!");
+        }
 
 
 
-        // layouts of all welcome sliders
-        // add few more layouts if you want
-        layouts = new int[]{
-                R.layout.slide1,
-                R.layout.slide2,
-                R.layout.slide3,
-                R.layout.slide4};
-
-        // adding bottom dots
-        addBottomDots(0);
-
-        // making notification bar transparent
-        changeStatusBarColor();
-
-        myViewPagerAdapter = new MyViewPagerAdapter();
-        viewPager.setAdapter(myViewPagerAdapter);
-        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-
-
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        btnNext12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // checking for last page
                 // if last page home screen will be launched
-                int current = getItem(+1);
-                if (current < layouts.length) {
-                    // move to next screen
-                    viewPager.setCurrentItem(current);
+                if (v == btnNext12) {
+                    clickcount = clickcount + 1;
+                    showMessages();
                 }
-                else {
-                    launchHomeScreen();
-                }
-    /*         Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
-                startActivity(intent);*/
             }
-
         });
-
 
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
@@ -113,125 +79,29 @@ public class WelcomeActivity extends FragmentActivity {
                     Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
                     startActivity(intent);
                 }
-/*                    Intent intent = new Intent(WelcomeActivity.this, com.Company.SmartGurlz.UnityPlayerActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    Bundle extras = getIntent().getExtras();
-                    if (extras != null)
-                        intent.putExtras(extras);
-                    startActivity(intent);
-                    }*/
                     finish();
-
             }
         });
 
-
-
     }
 
-    private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
-
-        int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
-        int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
-
-        dotsLayout.removeAllViews();
-        for (int i = 0; i < dots.length; i++) {
-            dots[i] = new TextView(this);
-            dots[i].setTextSize(35);
-            dots[i].setTextColor(colorsInactive[currentPage]);
-            dotsLayout.addView(dots[i]);
+    private void showMessages() {
+        if (clickcount == 1){
+            textBubble.setText("But I’m all out of art supplies...");
+        }else if(clickcount == 2){
+            textBubble.setText("Will you help me get to the store?");
+        }else if (clickcount >= 3) {
+                textBubble.setText("Great! Let’s get started");
+            btnNext12.setVisibility(View.INVISIBLE);
+            btnPlay.setVisibility(View.VISIBLE);
         }
-
-        if (dots.length > 0)
-            dots[currentPage].setTextColor(colorsActive[currentPage]);
     }
 
-    private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
-    }
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(true); //Setting to the true just for test (it should be false)
-        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, HovedActivity.class));
         finish();
     }
 
-    //  viewpager change listener
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            addBottomDots(position);
-
-            // changing the next button text 'NEXT' / 'GOT IT'
-            if (position == layouts.length - 1) {
-                // last page. make button text to GOT IT // Text has been removed and replaced by images
-
-                btnNext.setVisibility(View.INVISIBLE);
-                btnPlay.setVisibility(View.VISIBLE);
-            } else {
-                // still pages are left
-                btnNext.setText(getString(R.string.next));
-            }
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-    };
-
-    /**
-     * Making notification bar transparent
-     */
-    private void changeStatusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
-        }
-    }
-
-    /**
-     * View pager adapter
-     */
-    public class MyViewPagerAdapter extends PagerAdapter {
-        private LayoutInflater layoutInflater;
-
-        public MyViewPagerAdapter() {
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            View view = layoutInflater.inflate(layouts[position], container, false);
-            container.addView(view);
-
-            return view;
-        }
-
-        @Override
-        public int getCount() {
-            return layouts.length;
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object obj) {
-            return view == obj;
-        }
-
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            View view = (View) object;
-            container.removeView(view);
-        }
-    }
 }

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".HovedActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

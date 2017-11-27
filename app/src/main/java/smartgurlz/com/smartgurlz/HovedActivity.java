@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends FragmentActivity {
+public class HovedActivity extends FragmentActivity {
     private static int TIME_OUT = 4000; //Time to launch the another activity
 
 
@@ -21,7 +20,7 @@ public class MainActivity extends FragmentActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(MainActivity.this, WelcomeActivity.class);
+                Intent i = new Intent(HovedActivity.this, WelcomeActivity.class);
                 startActivity(i);
                 finish();
             }

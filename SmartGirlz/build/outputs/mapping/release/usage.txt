@@ -1,3 +1,0 @@
-com.SmartGurlz.app.BuildConfig
-com.SmartGurlz.app.UnityPlayerNativeActivity
-com.SmartGurlz.app.UnityPlayerProxyActivity
