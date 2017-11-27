@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1069638328625",
+    "firebase_url": "https://smartgurlz-d4497.firebaseio.com",
+    "project_id": "smartgurlz-d4497",
+    "storage_bucket": "smartgurlz-d4497.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069638328625:android:4e69190dbd602b6e",
+        "android_client_info": {
+          "package_name": "smartgurlz.com.smartgurlz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069638328625-3b334afdp3v6flajctvjvf0dporkpvju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4NpnIQ5fsAg6IIIy28dI1JVnwzPmTkLA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
