@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.Company.SmartGurlz"
+    package="com.SmartGurlz.app"
     android:installLocation="preferExternal"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="26" />
+        android:targetSdkVersion="27" />
 
     <supports-screens
         android:anyDensity="true"
@@ -23,13 +23,6 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
 
     <uses-feature
         android:name="android.hardware.touchscreen"
@@ -48,31 +41,32 @@
         android:label="@string/app_name"
         android:theme="@style/UnityThemeSelector" >
         <activity
-            android:name="com.Company.SmartGurlz.UnityPlayerActivity"
+            android:name="com.SmartGurlz.app.UnityPlayerActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape" >
+            android:process=":unity"
+            android:screenOrientation="fullSensor" >
             <meta-data
                 android:name="unityplayer.UnityActivity"
                 android:value="true" />
         </activity>
 
         <meta-data
+            android:name="unityplayer.SkipPermissionsDialog"
+            android:value="false" />
+        <meta-data
             android:name="unity.build-id"
-            android:value="6e741250-0a0e-485f-8f4b-e475bb21fd71" />
+            android:value="38818cbe-24fb-4246-9a86-7e2be9bcde07" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />
         <meta-data
             android:name="unity.splash-enable"
-            android:value="False" />
+            android:value="True" />
         <meta-data
             android:name="android.max_aspect"
             android:value="2.1" />
-        <meta-data
-            android:name="unityplayer.SkipPermissionsDialog"
-            android:value="false" />
     </application>
 
 </manifest>

@@ -23,7 +23,6 @@
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".GameActivity"></activity>
-        <activity android:name="com.Company.SmartGurlz.UnityPlayerActivity"></activity>
     </application>
 
 </manifest>

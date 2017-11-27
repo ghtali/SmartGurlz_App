@@ -19,7 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.Company.SmartGurlz.UnityPlayerActivity;
+import com.SmartGurlz.app.UnityPlayerActivity;
+
+//import com.Company.SmartGurlz.UnityPlayerActivity;
 
 /**
  * Created by Ali on 27/10/2017.

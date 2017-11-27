@@ -2,8 +2,6 @@
 buildscript {
 	repositories {
 		jcenter()
-		maven { url 'https://maven.google.com' }
-
 	}
 
 	dependencies {
@@ -16,24 +14,22 @@ allprojects {
       flatDir {
         dirs 'libs'
       }
-	   google()
    }
 }
 
 apply plugin: 'com.android.library'
 
 dependencies {
-	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile(name: 'OVRPlugin', ext:'aar')
+	compile fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 android {
-	compileSdkVersion 26
+	compileSdkVersion 27
 	buildToolsVersion '26.0.2'
 
 	defaultConfig {
-		targetSdkVersion 26
-		//applicationId 'com.Company.SmartGurlz'
+		targetSdkVersion 27
+		//applicationId 'com.SmartGurlz.app'
 	}
 
 	lintOptions {
@@ -60,9 +56,4 @@ android {
   		}
 	}
 
-}
-repositories {
-	maven {
-		url 'https://maven.google.com'
-	}
 }
