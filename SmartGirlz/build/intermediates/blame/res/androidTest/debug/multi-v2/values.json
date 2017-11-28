@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< Updated upstream
             "outputFile": "/Users/zayd/StudioProjects/SmartGurlz_App/SmartGirlz/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/zayd/StudioProjects/SmartGurlz_App/SmartGirlz/build/intermediates/bundles/debug/res/values/values.xml",
+=======
+            "outputFile": "C:\\usr\\local\\Cellar\\git\\2.15.0\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\usr\\local\\Cellar\\git\\2.15.0\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -17,10 +24,17 @@
             ]
         },
         {
+<<<<<<< Updated upstream
             "outputFile": "/Users/zayd/StudioProjects/SmartGurlz_App/C:\\Users\\Ana-Maria\\AndroidStudioProjects\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "/Users/zayd/StudioProjects/SmartGurlz_App/C:\\Users\\Ana-Maria\\AndroidStudioProjects\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+            "outputFile": "C:\\Users\\flemm\\Documents\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\flemm\\Documents\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
