@@ -7,23 +7,25 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-public class LevelSelect extends AppCompatActivity {
+public class SelectLevel extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_level);
 
-        GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        setContentView(R.layout.activity_select_level);
+
+        GridView gridview = (GridView) findViewById(R.id.gridView);
+        gridview.setAdapter(new LevelAdapter(this));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(LevelSelect.this, "" + position,
+                Toast.makeText(SelectLevel.this, "" + position,
                         Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 }
+

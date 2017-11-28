@@ -10,9 +10,6 @@
     <color name="bg_screen3">#3395ff</color>
     <color name="bg_screen4">#c873f4</color>
 
-    <!--Back Ground color-->
     <color name="bg_white">#ffff</color>
-    <color name="itm_black">#000000</color>
-
-
+    <color name="itm_black">#000</color>
 </resources>

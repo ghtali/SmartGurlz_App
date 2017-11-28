@@ -6,15 +6,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 
 /**
- * Created by Ali on 27/11/2017.
+ * Created by flemm on 28-11-2017.
  */
 
-public class ImageAdapter extends BaseAdapter {
+public class HighScoreAdapter extends BaseAdapter {
     private Context mContext;
 
-    public ImageAdapter(Context c) {
+    public HighScoreAdapter(Context c) {
         mContext = c;
     }
 
@@ -25,7 +26,6 @@ public class ImageAdapter extends BaseAdapter {
     public Object getItem(int position) {
         return null;
     }
-
     public long getItemId(int position) {
         return 0;
     }
@@ -46,19 +46,18 @@ public class ImageAdapter extends BaseAdapter {
         imageView.setImageResource(mThumbIds[position]);
         return imageView;
     }
-
     // references to our images
     private Integer[] mThumbIds = {
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,//lvl1
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,//lvl1
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user,
+            R.drawable.user, R.drawable.user
     };
 }
