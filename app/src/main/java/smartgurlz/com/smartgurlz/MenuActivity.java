@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuActivity extends FragmentActivity {
 
-    private Button btnPlay1,btnLogin,btnHighScore;
+    private Button btnplay1,btnlogin,btnhighScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -17,34 +17,35 @@ public class MenuActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_menu);
 
-        btnPlay1 = (Button) findViewById(R.id.btnplay1);
+        btnplay1 = (Button) findViewById(R.id.btnplay1);
 
 
-        btnLogin=(Button) findViewById(R.id.btnlogin);
+        btnlogin=(Button) findViewById(R.id.btnlogin);
 
 
-        btnHighScore = (Button) findViewById(R.id.btnhighscore);
+        btnhighScore = (Button) findViewById(R.id.btnhighscore);
 
-        btnPlay1.setOnClickListener(new View.OnClickListener() {
+        btnplay1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == btnPlay1) {
+                if (v == btnplay1) {
                     Intent intent = new Intent(getApplicationContext(), SelectLevel.class);
                     startActivity(intent);
+
                 }
             }
         });
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v==btnLogin){
+                if (v==btnlogin){
                     Intent intent1=new Intent(getApplicationContext(),LoginActivity.class);
                     startActivity(intent1);
 
                 }
             }
         });
-        btnHighScore.setOnClickListener(new View.OnClickListener() {
+        btnhighScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2= new Intent(getApplicationContext(),HighscoreActivity.class);
