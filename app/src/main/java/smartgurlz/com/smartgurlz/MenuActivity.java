@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnPlay1,btnLogin,btnHighscore;
+    private Button btnPlay1,btnLogin,btnHighScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -22,8 +22,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btnLogin.setOnClickListener(this);
 
 
-        btnHighscore = (Button) findViewById(R.id.btnHighscore);
-        btnHighscore.setOnClickListener(this);
+        btnHighScore = (Button) findViewById(R.id.btnHighScore);
+        btnHighScore.setOnClickListener(this);
 
 
     }
@@ -33,9 +33,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         if (v==btnPlay1){
             Intent intent= new Intent(this,SelectLevel.class);
             startActivity(intent);
-        }
+        }else
         if (v==btnLogin){
             Intent intent=new Intent(this,LoginActivity.class);
+        }
+        if (v==btnHighScore){
+            Intent intent= new Intent(this,HighscoreActivity.class);
         }
 
 
