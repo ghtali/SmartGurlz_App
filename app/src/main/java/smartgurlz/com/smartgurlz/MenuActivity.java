@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuActivity extends FragmentActivity {
 
-    private Button btnplay1,btnlogin,btnhighScore;
+    private Button btnplay1,btnlogin,btnhighscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -23,7 +23,7 @@ public class MenuActivity extends FragmentActivity {
         btnlogin=(Button) findViewById(R.id.btnlogin);
 
 
-        btnhighScore = (Button) findViewById(R.id.btnhighscore);
+        btnhighscore = (Button) findViewById(R.id.btnhighscore);
 
         btnplay1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +31,7 @@ public class MenuActivity extends FragmentActivity {
                 if (v == btnplay1) {
                     Intent intent = new Intent(getApplicationContext(), SelectLevel.class);
                     startActivity(intent);
+                    finish();
 
                 }
             }
@@ -41,15 +42,17 @@ public class MenuActivity extends FragmentActivity {
                 if (v==btnlogin){
                     Intent intent1=new Intent(getApplicationContext(),LoginActivity.class);
                     startActivity(intent1);
+                    finish();
 
                 }
             }
         });
-        btnhighScore.setOnClickListener(new View.OnClickListener() {
+        btnhighscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2= new Intent(getApplicationContext(),HighscoreActivity.class);
                 startActivity(intent2);
+                finish();
             }
         });
 
