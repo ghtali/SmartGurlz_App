@@ -1,40 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< Updated upstream
-            "outputFile": "/Users/zayd/StudioProjects/SmartGurlz_App/C:\\Users\\Ana-Maria\\AndroidStudioProjects\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v14/values-v14.xml",
             "map": [
                 {
-                    "source": "/Users/zayd/StudioProjects/SmartGurlz_App/C:\\Users\\Ana-Maria\\AndroidStudioProjects\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\bundles\\debug\\res\\values-v14\\values-v14.xml",
-=======
-            "outputFile": "C:\\usr\\local\\Cellar\\git\\2.15.0\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v14\\values-v14.xml",
-            "map": [
-                {
-                    "source": "C:\\usr\\local\\Cellar\\git\\2.15.0\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\bundles\\debug\\res\\values-v14\\values-v14.xml",
->>>>>>> Stashed changes
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "3",
-                        "endColumns": "8",
-                        "endOffsets": "154"
-                    }
-                }
-            ]
-        },
-        {
-<<<<<<< Updated upstream
-            "outputFile": "/Users/zayd/StudioProjects/SmartGurlz_App/SmartGirlz/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v14/values-v14.xml",
-            "map": [
-                {
-                    "source": "/Users/zayd/StudioProjects/SmartGurlz_App/SmartGirlz/build/intermediates/bundles/debug/res/values-v14/values-v14.xml",
-=======
-            "outputFile": "C:\\Users\\flemm\\Documents\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v14\\values-v14.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\flemm\\Documents\\SmartGurlz_App\\SmartGirlz\\build\\intermediates\\bundles\\debug\\res\\values-v14\\values-v14.xml",
->>>>>>> Stashed changes
+                    "source": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/build/intermediates/bundles/debug/res/values-v14/values-v14.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

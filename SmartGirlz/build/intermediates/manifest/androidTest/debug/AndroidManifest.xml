@@ -51,7 +51,7 @@
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:process=":unity"
+            android:process=":Unity"
             android:screenOrientation="fullSensor" >
             <meta-data
                 android:name="unityplayer.UnityActivity"
@@ -63,7 +63,7 @@
             android:value="false" />
         <meta-data
             android:name="unity.build-id"
-            android:value="38818cbe-24fb-4246-9a86-7e2be9bcde07" />
+            android:value="84f3df4d-b371-4917-bfaf-2c6644e53caa" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />
