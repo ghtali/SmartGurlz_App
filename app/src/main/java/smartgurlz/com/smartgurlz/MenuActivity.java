@@ -29,7 +29,7 @@ public class MenuActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 if (v == btnPlay1) {
-                    Intent intent = new Intent(MenuActivity.this, SelectLevel.class);
+                    Intent intent = new Intent(getApplicationContext(), SelectLevel.class);
                     startActivity(intent);
                 }
             }
@@ -38,7 +38,7 @@ public class MenuActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 if (v==btnLogin){
-                    Intent intent1=new Intent(MenuActivity.this,LoginActivity.class);
+                    Intent intent1=new Intent(getApplicationContext(),LoginActivity.class);
                     startActivity(intent1);
 
                 }
@@ -47,7 +47,7 @@ public class MenuActivity extends FragmentActivity {
         btnHighScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2= new Intent(MenuActivity.this,HighscoreActivity.class);
+                Intent intent2= new Intent(getApplicationContext(),HighscoreActivity.class);
                 startActivity(intent2);
             }
         });
