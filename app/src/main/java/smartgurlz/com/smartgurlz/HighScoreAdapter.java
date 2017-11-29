@@ -52,12 +52,6 @@ public class HighScoreAdapter extends BaseAdapter {
             R.drawable.user, R.drawable.user,
             R.drawable.user, R.drawable.user,
             R.drawable.user, R.drawable.user,
-            R.drawable.user, R.drawable.user,
-            R.drawable.user, R.drawable.user,
-            R.drawable.user, R.drawable.user,
-            R.drawable.user, R.drawable.user,
-            R.drawable.user, R.drawable.user,
-            R.drawable.user, R.drawable.user,
             R.drawable.user, R.drawable.user
     };
 }

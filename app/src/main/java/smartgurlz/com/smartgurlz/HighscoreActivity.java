@@ -11,11 +11,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
-/**
- * Created by flemm on 28-11-2017.
- */
-
-public class HighscoreActivity extends FragmentActivity {
+public class HighscoreActivity extends FragmentActivity implements View.OnClickListener{
 
     private Button btBack;
 
@@ -29,13 +25,13 @@ public class HighscoreActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_highscore);
 
-        btBack.setOnClickListener(new View.OnClickListener() {
+    /*    btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 startActivity(intent);
             }
-        });
+        });  */
 
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new HighScoreAdapter(this));
@@ -51,4 +47,14 @@ public class HighscoreActivity extends FragmentActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        btBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(HighscoreActivity.this, MenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 }
