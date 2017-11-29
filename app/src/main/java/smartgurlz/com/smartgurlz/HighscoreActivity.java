@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
+/**
+ * Created by flemm on 28-11-2017.
+ */
+
 public class HighscoreActivity extends FragmentActivity implements View.OnClickListener{
 
     private Button btBack;

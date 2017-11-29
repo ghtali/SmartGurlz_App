@@ -10,27 +10,27 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="15dp"
+        android:layout_height="317dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="11dp"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="27dp"
-        android:numColumns="auto_fit"
-        app:layout_constraintBottom_toTopOf="@+id/btBack"
+        android:layout_marginTop="16dp"
+        android:numColumns="1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginStart="16dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
