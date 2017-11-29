@@ -26,12 +26,7 @@
         <activity android:name=".MenuActivity"/>
         <activity android:name=".SelectLevel"/>
         <activity android:name=".HighscoreActivity"/>
-<<<<<<< Updated upstream
-=======
-        <activity android:name=".LevelAdapter">
-
-        </activity>
->>>>>>> Stashed changes
+        <activity android:name=".LevelAdapter"></activity>
     </application>
 
 </manifest>
