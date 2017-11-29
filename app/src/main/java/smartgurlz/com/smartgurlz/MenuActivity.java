@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.SmartGurlz.app.UnityPlayerActivity;
+
 public class MenuActivity extends FragmentActivity {
 
     private Button btnplay1,btnlogin,btnhighscore;
@@ -50,6 +52,7 @@ public class MenuActivity extends FragmentActivity {
         btnhighscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent2= new Intent(getApplicationContext(),HighscoreActivity.class);
                 startActivity(intent2);
                 finish();

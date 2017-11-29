@@ -1,0 +1,52 @@
+{
+    "logs": [
+        {
+            "outputFile": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/build/intermediates/res/merged/release/values-v21/values-v21.xml",
+            "map": [
+                {
+                    "source": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/res/values-v21/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "0",
+                        "startOffsets": "53",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "157"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "158"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v21/values-v21.xml",
+            "map": [
+                {
+                    "source": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/res/values-v21/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "0",
+                        "startOffsets": "53",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "157"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "3",
+                        "endColumns": "8",
+                        "endOffsets": "158"
+                    }
+                }
+            ]
+        }
+    ]
+}

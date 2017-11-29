@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/usr/local/Cellar/git/2.15.1/SmartGurlz_App/SmartGirlz/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/usr/local/Cellar/git/2.15.1/SmartGurlz_App/SmartGirlz/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/debug/shaders"/></dataSet></merger>
