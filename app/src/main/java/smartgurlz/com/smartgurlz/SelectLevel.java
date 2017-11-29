@@ -28,7 +28,7 @@ public class SelectLevel extends FragmentActivity {
                 startActivity(intent);
                 Toast.makeText(SelectLevel.this, "" + position,
                         Toast.LENGTH_SHORT).show();
-                finish();
+                
             }
         });
     }

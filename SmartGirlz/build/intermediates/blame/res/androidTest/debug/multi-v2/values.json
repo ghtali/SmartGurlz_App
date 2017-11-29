@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/build/intermediates/bundles/debug/res/values/values.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,103",
+                        "endLines": "2,4",
+                        "endColumns": "47,8",
+                        "endOffsets": "98,196"
+                    }
+                }
+            ]
+        }
+    ]
+}
