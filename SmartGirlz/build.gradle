@@ -20,7 +20,7 @@ allprojects {
 apply plugin: 'com.android.library'
 
 dependencies {
-	compile fileTree(include: ['*.jar'], dir: 'libs')
+	compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 android {

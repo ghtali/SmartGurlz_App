@@ -7,9 +7,11 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.SmartGurlz.app.UnityPlayerActivity;
+
 public class MenuActivity extends FragmentActivity {
 
-    private Button btnPlay1,btnLogin,btnHighScore;
+    private Button btnplay1,btnlogin,btnhighscore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -17,38 +19,43 @@ public class MenuActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_menu);
 
-        btnPlay1 = (Button) findViewById(R.id.btnplay1);
+        btnplay1 = (Button) findViewById(R.id.btnplay1);
 
 
-        btnLogin=(Button) findViewById(R.id.btnlogin);
+        btnlogin=(Button) findViewById(R.id.btnlogin);
 
 
-        btnHighScore = (Button) findViewById(R.id.btnhighscore);
+        btnhighscore = (Button) findViewById(R.id.btnhighscore);
 
-        btnPlay1.setOnClickListener(new View.OnClickListener() {
+        btnplay1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == btnPlay1) {
+                if (v == btnplay1) {
                     Intent intent = new Intent(getApplicationContext(), SelectLevel.class);
                     startActivity(intent);
-                }
-            }
-        });
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v==btnLogin){
-                    Intent intent1=new Intent(getApplicationContext(),LoginActivity.class);
-                    startActivity(intent1);
+                    finish();
 
                 }
             }
         });
-        btnHighScore.setOnClickListener(new View.OnClickListener() {
+        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (v==btnlogin){
+                    Intent intent1=new Intent(getApplicationContext(),LoginActivity.class);
+                    startActivity(intent1);
+                    finish();
+
+                }
+            }
+        });
+        btnhighscore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 Intent intent2= new Intent(getApplicationContext(),HighscoreActivity.class);
                 startActivity(intent2);
+                finish();
             }
         });
 

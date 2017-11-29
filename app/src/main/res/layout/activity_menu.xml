@@ -10,37 +10,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        android:orientation="vertical">
+        android:gravity="bottom"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="254dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="bottom"
-            android:orientation="horizontal">
+            android:gravity="bottom|right"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="326dp"
+            tools:layout_editor_absoluteY="321dp">
 
             <Button
                 android:id="@+id/btnplay1"
-                android:layout_width="50dp"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="@drawable/btnplay1"
-                />
+
+                android:background="@drawable/btnplay1" />
 
             <Button
                 android:id="@+id/btnlogin"
-                android:layout_width="50dp"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="@drawable/bntlogin"
-              />
+
+                android:background="@drawable/btnlogin" />
 
             <Button
                 android:id="@+id/btnhighscore"
-                android:layout_width="50dp"
+                android:layout_width="90dp"
                 android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="@drawable/btnhighscore"
-                 />
+
+                android:background="@drawable/btnhighscore" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
