@@ -2,12 +2,12 @@ package smartgurlz.com.smartgurlz;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
+public class MenuActivity extends FragmentActivity {
 
     private Button btnPlay1,btnLogin,btnHighScore;
     @Override
@@ -15,32 +15,43 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
 
-        btnPlay1 = (Button) findViewById(R.id.btnPlay1);
-        btnPlay1.setOnClickListener(this);
+        setContentView(R.layout.activity_menu);
 
-        btnLogin=(Button) findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(this);
+        btnPlay1 = (Button) findViewById(R.id.btnplay1);
 
 
-        btnHighScore = (Button) findViewById(R.id.btnHighScore);
-        btnHighScore.setOnClickListener(this);
+        btnLogin=(Button) findViewById(R.id.btnlogin);
 
+
+        btnHighScore = (Button) findViewById(R.id.btnhighscore);
+
+        btnPlay1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v == btnPlay1) {
+                    Intent intent = new Intent(MenuActivity.this, SelectLevel.class);
+                    startActivity(intent);
+                }
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v==btnLogin){
+                    Intent intent1=new Intent(MenuActivity.this,LoginActivity.class);
+                    startActivity(intent1);
+
+                }
+            }
+        });
+        btnHighScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2= new Intent(MenuActivity.this,HighscoreActivity.class);
+                startActivity(intent2);
+            }
+        });
 
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v==btnPlay1){
-            Intent intent= new Intent(this,SelectLevel.class);
-            startActivity(intent);
-        }else
-        if (v==btnLogin){
-            Intent intent=new Intent(this,LoginActivity.class);
-        }
-        if (v==btnHighScore){
-            Intent intent= new Intent(this,HighscoreActivity.class);
-        }
-
-
-    }
 }

@@ -19,7 +19,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnPlay1"
+                android:id="@+id/btnplay1"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -27,7 +27,7 @@
                 />
 
             <Button
-                android:id="@+id/btnLogin"
+                android:id="@+id/btnlogin"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
@@ -35,7 +35,7 @@
               />
 
             <Button
-                android:id="@+id/btnHighScore"
+                android:id="@+id/btnhighscore"
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
