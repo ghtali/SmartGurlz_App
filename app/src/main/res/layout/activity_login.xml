@@ -10,87 +10,104 @@
 
     <TextView
         android:id="@+id/username_tx"
-        android:layout_width="120sp"
-        android:layout_height="50sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Username:"
         android:textAlignment="viewStart"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="141dp" />
+        app:layout_constraintBottom_toTopOf="@+id/password_tx"
+        app:layout_constraintEnd_toEndOf="@+id/password_tx"
+        app:layout_constraintStart_toStartOf="@+id/password_tx"
+        app:layout_constraintTop_toBottomOf="@+id/smartgurlz_logo" />
 
     <EditText
         android:id="@+id/username_etx"
-        android:layout_width="210sp"
-        android:layout_height="50sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ems="10"
         android:hint="Type your username"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="141dp"
+        app:layout_constraintBottom_toTopOf="@+id/password_etx"
+        app:layout_constraintEnd_toEndOf="@+id/password_etx"
+        app:layout_constraintStart_toStartOf="@+id/password_etx"
+        app:layout_constraintTop_toBottomOf="@+id/smartgurlz_logo"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/password_etx"
-        android:layout_width="210sp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ems="10"
         android:hint="Type your password"
         android:inputType="textPassword"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="191dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_bt"
+        app:layout_constraintEnd_toEndOf="@+id/login_bt"
+        app:layout_constraintStart_toEndOf="@+id/username_tx"
+        app:layout_constraintTop_toBottomOf="@+id/username_tx"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/password_tx"
-        android:layout_width="120sp"
-        android:layout_height="50sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="50dp"
         android:text="Password:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="191dp"
+        app:layout_constraintBottom_toBottomOf="@+id/signup_bt"
+        app:layout_constraintStart_toStartOf="@+id/signup_bt"
+        app:layout_constraintTop_toBottomOf="@+id/smartgurlz_logo"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/login_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="95dp"
+        android:layout_marginEnd="116dp"
         android:backgroundTint="@android:color/holo_purple"
         android:text="Log in"
         android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="417dp"
-        tools:layout_editor_absoluteY="241dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/signup_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
         android:backgroundTint="@android:color/holo_purple"
         android:text="Sign up"
         android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="241dp"
+        app:layout_constraintBottom_toBottomOf="@+id/login_bt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/login_bt"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="16dp"
         android:backgroundTint="@android:color/holo_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_media_previous"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="316dp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/smartgurlz_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="70sp"
-        tools:layout_editor_absoluteY="42sp"
         tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>
