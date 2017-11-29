@@ -49,6 +49,7 @@ public class LoginActivity extends FragmentActivity{
                     Toast.makeText(getApplicationContext(), "Redirecting...",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(i);
+                    finish();
 
                     //Or a toast will tell the user that it is wrong
                 }else{
@@ -80,6 +81,7 @@ public class LoginActivity extends FragmentActivity{
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this, MenuActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
