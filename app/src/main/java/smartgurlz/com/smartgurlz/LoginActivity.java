@@ -71,8 +71,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        if(username_input.getText().toString().equals(name) &&
                password_input.getText().toString().equals(pw)) {
                   Toast.makeText(getApplicationContext(), "Redirecting...",Toast.LENGTH_SHORT).show();
-                 //   Intent i = new Intent(this, Menu.class);
-                 //   startActivity(i);
+                  Intent i = new Intent(this, MenuActivity.class);
+                  startActivity(i);
 
            //Or a toast will tell the user that it is wrong
                }else{
@@ -83,8 +83,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
       }
 
    if(v == back_btn){
-      // Intent i = new Intent(this, Menu.class);
-      // startActivity(i);
+      Intent i = new Intent(this, MenuActivity.class);
+      startActivity(i);
         }
     }
 
