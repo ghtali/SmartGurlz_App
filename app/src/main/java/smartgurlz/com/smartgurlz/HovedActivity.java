@@ -20,7 +20,7 @@ public class HovedActivity extends FragmentActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(HovedActivity.this, WelcomeActivity.class);
+                Intent i = new Intent(HovedActivity.this, MenuActivity.class);
                 startActivity(i);
                 finish();
             }

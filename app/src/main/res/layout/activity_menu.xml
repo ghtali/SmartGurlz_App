@@ -23,7 +23,7 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:background="@drawable/btnPlay1"
+                android:background="@drawable/btnplay1"
                 />
 
             <Button
@@ -31,7 +31,7 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:background="@drawable/bntLogin"
+                android:background="@drawable/bntlogin"
               />
 
             <Button
@@ -39,7 +39,7 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:background="@drawable/btnHighScore"
+                android:background="@drawable/btnhighscore"
                  />
         </LinearLayout>
     </LinearLayout>
