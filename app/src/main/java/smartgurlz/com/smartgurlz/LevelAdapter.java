@@ -56,7 +56,7 @@ public class LevelAdapter extends BaseAdapter {
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,//lvl1
             R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,
+            R.drawable.lock, R.drawable.lock,//lvl changes
             R.drawable.lock, R.drawable.lock
     };
 }
