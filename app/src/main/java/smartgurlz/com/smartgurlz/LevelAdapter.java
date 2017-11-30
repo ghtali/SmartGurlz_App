@@ -47,7 +47,7 @@ public class LevelAdapter extends BaseAdapter {
     }
     // references to our images
     private Integer[] mThumbIds = {
-            R.drawable.lock, R.drawable.lock,
+            R.drawable.lvl1, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,//lvl1
