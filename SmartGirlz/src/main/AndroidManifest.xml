@@ -6,8 +6,8 @@
 
       <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
     </activity>
-    <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
-    <meta-data android:name="unity.build-id" android:value="84f3df4d-b371-4917-bfaf-2c6644e53caa" />
+      <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
+    <meta-data android:name="unity.build-id" android:value="4f094578-9569-4482-b314-625b2d222e7e" />
     <meta-data android:name="unity.splash-mode" android:value="0" />
     <meta-data android:name="unity.splash-enable" android:value="True" />
     <meta-data android:name="android.max_aspect" android:value="2.1" />
