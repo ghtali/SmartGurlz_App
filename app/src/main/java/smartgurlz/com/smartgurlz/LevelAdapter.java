@@ -14,6 +14,7 @@ import android.widget.ImageView;
 public class LevelAdapter extends BaseAdapter {
     private Context mContext;
 
+
     public LevelAdapter(Context c) {
         mContext = c;
     }
@@ -45,6 +46,7 @@ public class LevelAdapter extends BaseAdapter {
         imageView.setImageResource(mThumbIds[position]);
         return imageView;
     }
+
     // references to our images
     private Integer[] mThumbIds = {
             R.drawable.lvl1, R.drawable.lock,
@@ -59,4 +61,6 @@ public class LevelAdapter extends BaseAdapter {
             R.drawable.lock, R.drawable.lock,//lvl changes
             R.drawable.lock, R.drawable.lock
     };
+
 }
+

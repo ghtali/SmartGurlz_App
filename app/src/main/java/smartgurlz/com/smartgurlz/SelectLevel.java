@@ -18,7 +18,6 @@ public class SelectLevel extends FragmentActivity {
         setContentView(R.layout.activity_select_level);
 
         setContentView(R.layout.activity_select_level);
-
         GridView gridview = (GridView) findViewById(R.id.gridview1);
         gridview.setAdapter(new LevelAdapter(this));
 
@@ -33,9 +32,18 @@ public class SelectLevel extends FragmentActivity {
 
                         break;
                 }
-                
+
             }
         });
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
-

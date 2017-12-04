@@ -2,9 +2,9 @@ package smartgurlz.com.smartgurlz;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 
 public class HovedActivity extends FragmentActivity {
     private static int TIME_OUT = 4000; //Time to launch the another activity

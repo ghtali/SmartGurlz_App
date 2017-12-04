@@ -13,19 +13,22 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".HovedActivity">
+        <activity android:name="smartgurlz.com.smartgurlz.HovedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="smartgurlz.com.smartgurlz.MenuActivity" />
         </activity>
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".GameActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MenuActivity"/>
-        <activity android:name=".SelectLevel"/>
-        <activity android:name=".HighscoreActivity"/>
+        <activity android:name="smartgurlz.com.smartgurlz.WelcomeActivity" />
+        <activity android:name="smartgurlz.com.smartgurlz.GameActivity" />
+        <activity android:name="smartgurlz.com.smartgurlz.LoginActivity" />
+        <activity android:name="smartgurlz.com.smartgurlz.MenuActivity"/>
+        <activity android:name="smartgurlz.com.smartgurlz.SelectLevel"/>
+        <activity android:name="smartgurlz.com.smartgurlz.HighscoreActivity"/>
     </application>
 
 </manifest>
