@@ -70,11 +70,11 @@ ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/Andro
 	android:name
 		ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:7:18-58
 meta-data#unityplayer.SkipPermissionsDialog
-ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:9:5-89
+ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:9:7-91
 	android:value
-		ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:9:65-86
+		ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:9:67-88
 	android:name
-		ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:9:16-64
+		ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:9:18-66
 meta-data#unity.build-id
 ADDED from /usr/local/Cellar/git/2.15.0/SmartGurlz_App/SmartGirlz/src/main/AndroidManifest.xml:10:5-101
 	android:value
