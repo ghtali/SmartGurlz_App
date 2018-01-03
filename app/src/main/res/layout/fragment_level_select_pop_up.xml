@@ -1,0 +1,141 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smartgurlz.com.smartgurlz.levelSelectPopUp">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/BG"
+            android:layout_width="599dp"
+            android:layout_height="236dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/bg_empty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/HighscoreBar"
+            android:layout_width="179dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="168dp"
+            android:src="@drawable/reward_bg_empty_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/Door"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="272dp"
+            android:layout_marginStart="268dp"
+            android:layout_marginTop="220dp"
+            android:src="@drawable/lvl_opened_2_pressed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Levelnr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="92dp"
+            android:src="@drawable/star_sm_transparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/star2"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="92dp"
+            android:src="@drawable/star_sm_transparent"
+            app:layout_constraintStart_toEndOf="@+id/star"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/star3"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="92dp"
+            android:src="@drawable/star_sm_transparent"
+            app:layout_constraintStart_toEndOf="@+id/star2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/PlayButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="336dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:cropToPadding="false"
+            android:maxHeight="42dp"
+
+            android:maxWidth="42dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/next_right_but"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/BackButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="200dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:cropToPadding="false"
+            android:maxHeight="42dp"
+
+            android:maxWidth="42dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back_left_but"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/HighScoreButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="268dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:cropToPadding="false"
+            android:maxHeight="42dp"
+
+            android:maxWidth="42dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/leaderboards_but"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/Levelnr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="66dp"
+            android:layout_marginStart="159dp"
+            android:layout_marginTop="208dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toStartOf="@+id/Door"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/BG"
+            tools:text="Level 1" />
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
