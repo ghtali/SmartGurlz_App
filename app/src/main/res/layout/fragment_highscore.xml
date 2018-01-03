@@ -1,0 +1,163 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smartgurlz.com.smartgurlz.HighscoreFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/textViewPlayer1"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="Name"
+            app:layout_constraintStart_toEndOf="@+id/playerNumber5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewPlayer2"
+            android:layout_width="187dp"
+            android:layout_height="17dp"
+            android:layout_marginBottom="27dp"
+            android:layout_marginTop="27dp"
+            android:text="Name"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewPlayer3"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayer1"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer1"
+            app:layout_constraintTop_toTopOf="@+id/textViewPlayer1" />
+
+        <TextView
+            android:id="@+id/textViewPlayer3"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayerPoints3"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayer2"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer2" />
+
+        <TextView
+            android:id="@+id/textViewPlayer4"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayerPoints4"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayer3"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer3" />
+
+        <TextView
+            android:id="@+id/textViewPlayer5"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayerPoints5"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayer4"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayer4" />
+
+        <TextView
+            android:id="@+id/textViewPlayerPoints1"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Points"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayer1"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayer5" />
+
+        <TextView
+            android:id="@+id/textViewPlayerPoints2"
+            android:layout_width="187dp"
+            android:layout_height="18dp"
+            android:text="Points"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayer2"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayerPoints1"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayerPoints1" />
+
+        <TextView
+            android:id="@+id/textViewPlayerPoints3"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:text="Points"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayerPoints2"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayerPoints2"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlayerPoints1" />
+
+        <TextView
+            android:id="@+id/textViewPlayerPoints4"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Points"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayerPoints3"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayerPoints3"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlayerPoints3" />
+
+        <TextView
+            android:id="@+id/textViewPlayerPoints5"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Points"
+            app:layout_constraintStart_toEndOf="@+id/textViewPlayerPoints4"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlayerPoints4"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlayerPoints4" />
+
+        <TextView
+            android:id="@+id/playerNumber1"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="100dp"
+            android:text="Player 1"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayer1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/playerNumber2"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Player 2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPlayer2"
+            app:layout_constraintStart_toEndOf="@+id/playerNumber1"
+            app:layout_constraintStart_toStartOf="@+id/playerNumber1" />
+
+        <TextView
+            android:id="@+id/playerNumber3"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Player 3"
+            app:layout_constraintStart_toEndOf="@+id/playerNumber2"
+            app:layout_constraintStart_toStartOf="@+id/playerNumber2"
+            app:layout_constraintTop_toTopOf="@+id/textViewPlayer3" />
+
+        <TextView
+            android:id="@+id/playerNumber4"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Player 4"
+            app:layout_constraintStart_toEndOf="@+id/playerNumber3"
+            app:layout_constraintStart_toStartOf="@+id/playerNumber3"
+            app:layout_constraintTop_toTopOf="@+id/textViewPlayer4" />
+
+        <TextView
+            android:id="@+id/playerNumber5"
+            android:layout_width="186dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Player 5"
+            app:layout_constraintStart_toEndOf="@+id/playerNumber4"
+            app:layout_constraintStart_toStartOf="@+id/playerNumber4"
+            app:layout_constraintTop_toTopOf="@+id/textViewPlayer5" />
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
