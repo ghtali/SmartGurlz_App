@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/bg_white"
     android:orientation="horizontal"
     tools:context="smartgurlz.com.smartgurlz.LoginFragment">
@@ -12,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/username_tx"
+        android:id="@+id/username_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -28,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/username_etx"
+        android:id="@+id/userName_etx"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -42,7 +41,7 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/password_etx"
+        android:id="@+id/passWord_etx"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -57,7 +56,7 @@
       />
 
     <TextView
-        android:id="@+id/password_tx"
+        android:id="@+id/password_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -71,7 +70,7 @@
         />
 
     <Button
-        android:id="@+id/login_bt"
+        android:id="@+id/login_btn"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -84,7 +83,7 @@
        />
 
     <Button
-        android:id="@+id/signup_bt"
+        android:id="@+id/signup_btn"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
@@ -98,7 +97,7 @@
         />
 
     <ImageButton
-        android:id="@+id/back_btn"
+        android:id="@+id/backb_btn"
         android:layout_width="50dp"
         android:layout_height="50sp"
         android:layout_marginBottom="50dp"
@@ -125,7 +124,7 @@
     tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/smartgurlz_logo"
+        android:id="@+id/smartgurlz_logoet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

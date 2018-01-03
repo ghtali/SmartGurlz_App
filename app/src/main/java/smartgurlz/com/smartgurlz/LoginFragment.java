@@ -42,12 +42,12 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        username_input = (EditText) view.findViewById(R.id.username_etx);
-        password_input = (EditText) view.findViewById(R.id.password_etx);
+        username_input = (EditText) view.findViewById(R.id.userName_etx);
+        password_input = (EditText) view.findViewById(R.id.passWord_etx);
 
-        login_btn = (Button) view.findViewById(R.id.login_bt);
-        signup_btn = (Button) view.findViewById(R.id.signup_bt);
-        back_btn = (ImageButton) view.findViewById(R.id.back_btn);
+        login_btn = (Button) view.findViewById(R.id.login_btn);
+        signup_btn = (Button) view.findViewById(R.id.signup_btn);
+        back_btn = (ImageButton) view.findViewById(R.id.backb_btn);
 
 
         login_btn.setOnClickListener(new View.OnClickListener() {
