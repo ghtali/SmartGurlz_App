@@ -19,6 +19,9 @@ public class LevelAdapter extends BaseAdapter {
         mContext = c;
     }
 
+    public LevelAdapter(SelectLevelFrag selectLevelFrag) {
+    }
+
     public int getCount() {
         return mThumbIds.length;
     }
