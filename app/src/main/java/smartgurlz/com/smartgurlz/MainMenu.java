@@ -1,5 +1,6 @@
 package smartgurlz.com.smartgurlz;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
+import smartgurlz.com.smartgurlz.menufragments.LoginFragment;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -49,6 +51,8 @@ public class MainMenu extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     setTitle("Fragment Title Two");
                     FragmentTwo fragment2 = new FragmentTwo();
+
+                   // LoginFragment fragment2 = new LoginFragment();
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction2.replace(R.id.fram, fragment2 , "FragmentName"); // fram is the id of FrameLayout in xml file()
                     fragmentTransaction2.commit();
@@ -67,6 +71,7 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+      //  this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 

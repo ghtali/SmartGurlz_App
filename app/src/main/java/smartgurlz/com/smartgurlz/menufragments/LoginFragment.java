@@ -1,4 +1,4 @@
-package smartgurlz.com.smartgurlz;
+package smartgurlz.com.smartgurlz.menufragments;
 
 
 import android.content.Context;
@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import smartgurlz.com.smartgurlz.MenuActivity;
+import smartgurlz.com.smartgurlz.R;
 
 
 /** @author Ana-Maria Fischer
