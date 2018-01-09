@@ -8,19 +8,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import smartgurlz.com.smartgurlz.MenusFragments.FragmentOne;
-import smartgurlz.com.smartgurlz.MenusFragments.FragmentThree;
-import smartgurlz.com.smartgurlz.MenusFragments.FragmentTwo;
+import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
+import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
+import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
 
 public class MainMenu extends AppCompatActivity {
 
     private TextView mTextMessage;
 
+
+
+
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
+
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+       /*    BottomNavigationView bottomNavigationView = (BottomNavigationView)
+
+            findViewById(R.id.navigation);
+
+            bottomNavigationView.getMenu().findItem(R.id.uncheckedItem).setChecked(true);
+            bottomNavigationView.findViewById(R.id.uncheckedItem).setVisibility(View.GONE);
+
+            BottomNavigationViewUtils.disableShiftMode(bottomNavigationView);*/
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     setTitle("Fragment Title One");

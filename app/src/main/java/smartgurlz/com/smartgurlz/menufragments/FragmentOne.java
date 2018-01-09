@@ -1,4 +1,4 @@
-package smartgurlz.com.smartgurlz.MenusFragments;
+package smartgurlz.com.smartgurlz.menufragments;
 
 
 
