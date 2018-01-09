@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_white"
-    android:orientation="horizontal"
-    tools:context="smartgurlz.com.smartgurlz.LoginFragment">
+    tools:context="smartgurlz.com.smartgurlz.menufragments.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
