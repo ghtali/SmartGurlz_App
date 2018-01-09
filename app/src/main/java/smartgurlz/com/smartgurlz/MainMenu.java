@@ -8,39 +8,58 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import smartgurlz.com.smartgurlz.MenusFragments.FragmentOne;
-import smartgurlz.com.smartgurlz.MenusFragments.FragmentThree;
-import smartgurlz.com.smartgurlz.MenusFragments.FragmentTwo;
+import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
+import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
+import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
 
 public class MainMenu extends AppCompatActivity {
 
     private TextView mTextMessage;
 
+
+
+
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
+
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+       /*    BottomNavigationView bottomNavigationView = (BottomNavigationView)
+
+            findViewById(R.id.navigation);
+
+            bottomNavigationView.getMenu().findItem(R.id.uncheckedItem).setChecked(true);
+            bottomNavigationView.findViewById(R.id.uncheckedItem).setVisibility(View.GONE);
+
+            BottomNavigationViewUtils.disableShiftMode(bottomNavigationView);*/
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     setTitle("Fragment Title One");
                     FragmentOne fragment = new FragmentOne();
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.fram, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
+                    fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
                     fragmentTransaction.commit();// remember to commit fragment
                     return true;
                 case R.id.navigation_dashboard:
                     setTitle("Fragment Title Two");
                     FragmentTwo fragment2 = new FragmentTwo();
+
+                   // LoginFragment fragment2 = new LoginFragment();
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction2.replace(R.id.fram, fragment2 , "FragmentName"); // fram is the id of FrameLayout in xml file()
+                    fragmentTransaction2.replace(R.id.container, fragment2 , "FragmentName"); // fram is the id of FrameLayout in xml file()
                     fragmentTransaction2.commit();
                     return true;
                 case R.id.navigation_notifications:
                     setTitle("Fragment Three");
                     FragmentThree fragment3 = new FragmentThree();
                     FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction3.replace(R.id.fram, fragment3, "FragmentName"); // fram is the id of FrameLayout in xml file()
+                    fragmentTransaction3.replace(R.id.container, fragment3, "FragmentName"); // fram is the id of FrameLayout in xml file()
                     fragmentTransaction3.commit();
                     return true;
             }
@@ -50,6 +69,7 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+      //  this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
@@ -61,7 +81,7 @@ public class MainMenu extends AppCompatActivity {
         setTitle("Fragment Title One");
         FragmentOne fragment = new FragmentOne();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fram, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
+        fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
         fragmentTransaction.commit();
     }
 
