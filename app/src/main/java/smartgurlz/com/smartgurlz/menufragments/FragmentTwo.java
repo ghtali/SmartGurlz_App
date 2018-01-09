@@ -5,7 +5,6 @@ package smartgurlz.com.smartgurlz.menufragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,11 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
-import smartgurlz.com.smartgurlz.MenuActivity;
+import smartgurlz.com.smartgurlz.MainMenu;
 import smartgurlz.com.smartgurlz.R;
+
+//import smartgurlz.com.smartgurlz.MenuActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,7 +62,7 @@ public class FragmentTwo extends Fragment {
                 if (username_input.getText().toString().equals(name) &&
                         password_input.getText().toString().equals(pw)) {
                     Toast.makeText(getActivity().getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(getActivity(), MenuActivity.class);
+                    Intent i = new Intent(getActivity(), MainMenu.class);
                     startActivity(i);
                     getActivity().finish();
 

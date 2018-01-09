@@ -1,6 +1,5 @@
 package smartgurlz.com.smartgurlz;
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
-import smartgurlz.com.smartgurlz.menufragments.LoginFragment;
 
 public class MainMenu extends AppCompatActivity {
 

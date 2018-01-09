@@ -2,10 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:context="smartgurlz.com.smartgurlz.menufragments.FragmentTwo">
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+  tools:context="smartgurlz.com.smartgurlz.menufragments.FragmentTwo">
+
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/username_txt"
         android:layout_width="wrap_content"
@@ -86,21 +89,6 @@
         android:text="Sign up"
         android:textColor="@android:color/white" />
 
-
-    =======
-    android:layout_marginBottom="18sp"
-    android:layout_marginStart="18sp"
-    >>>>>>> Stashed changes
-    android:backgroundTint="@android:color/holo_purple"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.079"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.967"
-    app:srcCompat="@android:drawable/ic_media_previous"
-    tools:ignore="MissingConstraints" />
-
     <ImageView
         android:id="@+id/smartgurlz_logoet"
         android:layout_width="wrap_content"
@@ -112,3 +100,4 @@
 
 
 </FrameLayout>
+
