@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPurplesmart">#aa3d90</color>
+    <color name="colorTurkissmart">#02b3b5</color>
+    <color name="colorPinksmart">#db2369</color>
 
     <!-- Screens background color-->
     <color name="bg_screen1">#f64c73</color>
