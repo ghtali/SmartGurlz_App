@@ -32,3 +32,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     implementation project(':SmartGirlz')
 }
+
+apply plugin: 'com.google.gms.google-services'
+
