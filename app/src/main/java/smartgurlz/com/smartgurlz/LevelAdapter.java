@@ -1,4 +1,4 @@
-package smartgurlz.com.smartgurlz;
+/*package smartgurlz.com.smartgurlz;
 
 import android.content.Context;
 import android.view.View;
@@ -7,15 +7,17 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-/**
+import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 
- */
+
+
+
 
 public class LevelAdapter extends BaseAdapter {
-    private Context mContext;
+ static FragmentOne mContext;
 
 
-    public LevelAdapter(Context c) {
+    public LevelAdapter(FragmentOne c) {
         mContext = c;
     }
 
@@ -64,3 +66,4 @@ public class LevelAdapter extends BaseAdapter {
 
 }
 
+ */
