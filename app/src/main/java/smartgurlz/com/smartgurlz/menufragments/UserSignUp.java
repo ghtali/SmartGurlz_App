@@ -1,12 +1,15 @@
 package smartgurlz.com.smartgurlz.menufragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +23,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import smartgurlz.com.smartgurlz.MainMenu;
 import smartgurlz.com.smartgurlz.R;
 
-/**
+/**@author Mads & Ana-Maria 10-01-18
  * A simple {@link Fragment} subclass.
  */
 public class UserSignUp extends Fragment {
@@ -33,10 +37,6 @@ public class UserSignUp extends Fragment {
     private TextView textViewSignIn;
     private FirebaseAuth firebaseAuth;
 
-
-
-
-
     public UserSignUp() {
         // Required empty public constructor
     }
@@ -46,70 +46,111 @@ public class UserSignUp extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        View view = inflater.inflate(R.layout.fragment_user_sign_up, container, false);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser() != null) {
+        //Toast.makeText(getActivity().getApplicationContext(), "Vi kommer ind", Toast.LENGTH_LONG).show();
 
-            UserProfile userProfile = new UserProfile();
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.userprofileLayout, userProfile).commit();
+       // if (firebaseAuth.getCurrentUser() != null) {
 
-            buttonRegister = getView().findViewById(R.id.buttonRegister);
+            //UserProfile userProfile = new UserProfile();
+            //FragmentManager fragmentManager = getFragmentManager();
+            //fragmentManager.beginTransaction().replace(R.id.userprofileLayout, userProfile).commit();
 
-            editTextEmail = getView().findViewById(R.id.editTextEmail);
 
-            getEditTextPassword = getView().findViewById(R.id.editTextPassword);
 
-            textViewSignIn = getView().findViewById(R.id.textViewSignIn);
+           buttonRegister = view.findViewById(R.id.buttonRegister);
 
-            buttonRegister.setOnClickListener((View.OnClickListener) this);
+            editTextEmail = view.findViewById(R.id.editTextEmail);
 
-            textViewSignIn.setOnClickListener((View.OnClickListener) this);
+            getEditTextPassword = view.findViewById(R.id.editTextPassword);
 
-        }
+            textViewSignIn = view.findViewById(R.id.textViewSignIn);
 
-        return inflater.inflate(R.layout.fragment_user_sign_up, container, false);
+            //buttonRegister.setOnClickListener((View.OnClickListener) this);
 
-    private void registerUser() {
+           // textViewSignIn.setOnClickListener((View.OnClickListener) this);
 
-        String email = editTextEmail.getText().toString().trim();
-        String password = getEditTextPassword.getText().toString().trim();
+
+
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                registerUser(editTextEmail.getText().toString().trim(),getEditTextPassword.getText().toString().trim());
+
+            }
+        });
+
+        //}
+/*
+        final Button loginButton = (Button)findViewById(R.id.login_button);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String enteredEmail = emailInput.getText().toString();
+                String enteredPassword = passwordInput.getText().toString();
+
+                if(TextUtils.isEmpty(enteredEmail) || TextUtils.isEmpty(enteredPassword)){
+                    Helper.displayMessageToast(SignUpActivity.this, "Login fields must be filled");
+                    return;
+                }
+                if(!Helper.isValidEmail(enteredEmail)){
+                    Helper.displayMessageToast(SignUpActivity.this, "Invalidate email entered");
+                    return;
+                }
+
+                ((FirebaseApplication)getApplication()).createNewUser(SignUpActivity.this, enteredEmail, enteredPassword, loginError);
+            }
+        });
+    }
+    */
+
+       // return inflater.inflate(R.layout.fragment_user_sign_up, container, false);
+        return view;
+
+    }
+
+    private void registerUser(String email, String password) {
+
 
         if (TextUtils.isEmpty(email)) {
             //email is empty
             //Toast.makeText("Please Enter Your Email!");
             //Stop the function from executing further
-            return;
+            //  return null;
 
         }
         if (TextUtils.isEmpty(password)) {
             //password is empty
             //Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
             //Stop the function from executing further
-            return;
+            // return null;
         }
 
         //if validations are ok
         //then will first show a progressDialog
 
-
         firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (task.isSuccessful()) {
+                        if (!task.isSuccessful()) {
                             //user is successfully registered and logged in
                             //we will start the profile activity here
                             //show the user a message with Toast
-                            Toast.makeText(getActivity(this),"Registered successfuly!",Toast.LENGTH_SHORT).show();
-
-
+                            Log.d("ERROR","Error" + task.getException());
+                            Toast.makeText(getActivity().getApplicationContext(), "ERROR" + task.getException(), Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(getActivity().getApplicationContext(), "Registered successfuly!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
 
-    }
+                }
+
 }
+
