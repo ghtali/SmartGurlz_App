@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,10 +40,10 @@ public class FragmentTwo extends Fragment {
     private EditText password_input;
     private Button login_btn;
     private Button signup_btn;
-    private Button forgotPassword;
+    private TextView forgotPassword;
     private FirebaseAuth auth;
     private FrameLayout login_fID;
-    private  Snackbar snackbar;
+  //  private  Snackbar snackbar;
   //  private ImageButton back_btn;
 
     public FragmentTwo() {
@@ -63,7 +64,7 @@ public class FragmentTwo extends Fragment {
 
         login_btn = (Button) view.findViewById(R.id.login_btn);
         signup_btn = (Button) view.findViewById(R.id.signup_btn);
-        forgotPassword = (Button) view.findViewById(R.id.forgotPassword);
+        forgotPassword = (TextView) view.findViewById(R.id.forgotPassword);
 
         login_fID = (FrameLayout) view.findViewById(R.id.login_fID);
 
@@ -148,7 +149,8 @@ public class FragmentTwo extends Fragment {
                 if (!task.isSuccessful()) {
                     if (password.length() < 6) {
                         //Toast.makeText(, "Password is wrong", Toast.LENGTH_LONG).show();
-                        Snackbar.make(login_fID, "had a d", Snackbar.LENGTH_SHORT).show();
+                        Snackbar snackbar = Snackbar.make(login_fID, "had a d", Snackbar.LENGTH_SHORT);
+                        snackbar.show();
                     }
                 }
             }
