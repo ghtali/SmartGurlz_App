@@ -8,7 +8,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 /**
- * Created by Ali on 27/11/2017.
+
  */
 
 public class LevelAdapter extends BaseAdapter {
