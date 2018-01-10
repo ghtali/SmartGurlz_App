@@ -1,13 +1,29 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_fID"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
-  tools:context="smartgurlz.com.smartgurlz.menufragments.FragmentTwo">
+    tools:context="smartgurlz.com.smartgurlz.menufragments.FragmentTwo">
 
 
     <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="110dp"
+        android:clickable="true"
+        android:text="Forgot password?"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/username_txt"
@@ -20,8 +36,7 @@
         android:layout_marginTop="20dp"
         android:text="Username:"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
-   />
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/userName_etx"
