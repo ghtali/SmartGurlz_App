@@ -14,13 +14,7 @@ import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent;
 import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent.DummyItem;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
-public class LevelFragment extends Fragment {
+public class LevelFragment extends Fragment  {
 
     // TODO: Customize parameters
     private int mColumnCount = 2;
@@ -76,6 +70,8 @@ public class LevelFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+
 
     /**
      * This interface must be implemented by activities that contain this

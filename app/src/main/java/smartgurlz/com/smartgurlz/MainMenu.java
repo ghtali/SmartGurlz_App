@@ -12,8 +12,10 @@ import android.widget.TextView;
 import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
+import smartgurlz.com.smartgurlz.menufragments.LevelFragment;
+import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity implements LevelFragment.OnListFragmentInteractionListener{
 
     private TextView mTextMessage;
 
@@ -41,8 +43,8 @@ public class MainMenu extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    setTitle("Fragment Title One");
-                    FragmentOne fragment = new FragmentOne();
+                    setTitle("LevelFragment");
+                    LevelFragment fragment = new LevelFragment();
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction.commit();// remember to commit fragment
@@ -79,11 +81,15 @@ public class MainMenu extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //When app starts FragmentOne will be displayed
-        setTitle("Fragment Title One");
-        FragmentOne fragment = new FragmentOne();
+        setTitle("LevelFragment");
+        LevelFragment fragment = new LevelFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+        
+    }
 }

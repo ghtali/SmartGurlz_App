@@ -11,10 +11,8 @@ import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 
 
 
-
-
 public class LevelAdapter extends BaseAdapter {
- static FragmentOne mContext;
+    private FragmentOne mContext;
 
 
     public LevelAdapter(FragmentOne c) {
@@ -24,6 +22,7 @@ public class LevelAdapter extends BaseAdapter {
     public int getCount() {
         return mThumbIds.length;
     }
+    private  ImageView imageView = new ImageView();
 
     public Object getItem(int position) {
         return null;
@@ -34,10 +33,10 @@ public class LevelAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
+
             imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
@@ -66,4 +65,4 @@ public class LevelAdapter extends BaseAdapter {
 
 }
 
- */
+*/
