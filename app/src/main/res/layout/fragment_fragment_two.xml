@@ -11,23 +11,8 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/forgotPassword"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="110dp"
-        android:clickable="true"
-        android:text="Forgot password?"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold" />
-
-    <TextView
         android:id="@+id/username_txt"
-        android:layout_width="wrap_content"
+        android:layout_width="108dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="30dp"
@@ -87,7 +72,7 @@
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="50dp"
         android:layout_marginTop="110dp"
-        android:backgroundTint="@android:color/holo_purple"
+        android:backgroundTint="@color/colorPurplesmart"
         android:text="Log in"
         android:textColor="@android:color/white" />
 
@@ -100,7 +85,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="110dp"
-        android:backgroundTint="@android:color/holo_purple"
+        android:backgroundTint="@color/colorPurplesmart"
         android:text="Sign up"
         android:textColor="@android:color/white" />
 
@@ -112,6 +97,22 @@
         android:layout_marginBottom="80dp"
         android:contentDescription="SmartgurlzLogo"
         android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="110dp"
+        android:clickable="true"
+        android:text="Forgot password?"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="12sp" />
 
 
 </FrameLayout>
