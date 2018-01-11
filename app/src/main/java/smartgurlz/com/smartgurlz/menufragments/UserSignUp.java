@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,7 +35,6 @@ public class UserSignUp extends Fragment {
     private Button buttonRegister;
     private EditText editTextEmail;
     private EditText getEditTextPassword;
-    private TextView textViewSignIn;
     private FirebaseAuth firebaseAuth;
     private TextView already_txt;
 
@@ -67,7 +67,7 @@ public class UserSignUp extends Fragment {
 
             getEditTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
 
-            textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
+           // textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
 
             already_txt = (TextView) view.findViewById(R.id.already_txt);
 
@@ -91,8 +91,12 @@ public class UserSignUp extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTwo loginfrag = new FragmentTwo();
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.container, loginfrag).commit();
+
+                FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+                fragmentTransaction2.replace(R.id.container, loginfrag , "FragmentName"); // fram is the id of FrameLayout in xml file()
+                fragmentTransaction2.commit();
+
+
 
             }
 
