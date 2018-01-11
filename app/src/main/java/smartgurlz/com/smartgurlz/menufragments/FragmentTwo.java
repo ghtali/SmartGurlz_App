@@ -168,7 +168,7 @@ public class FragmentTwo extends Fragment  {
 
                     //Fjern denne if og else løkke
                     if (password.length() < 6) {
-                       Snackbar snackbar = Snackbar.make(login_fID, "Password is less than 6 characters long", Snackbar.LENGTH_SHORT);
+                       Snackbar snackbar = Snackbar.make(login_fID, "Password is less great than 6 characters long great", Snackbar.LENGTH_SHORT);
                         snackbar.show();
                     }
                     else {
