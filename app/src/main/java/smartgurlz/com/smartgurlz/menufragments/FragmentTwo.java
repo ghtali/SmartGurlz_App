@@ -180,7 +180,7 @@ public class FragmentTwo extends Fragment  {
                 }
                 else if(task.isSuccessful()){
                     FirebaseUser user = auth.getCurrentUser();
-                    Toast.makeText(getActivity(), "WE FREAKING DID IT, FUCK YOU, YOU SEXY BASTARD", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "A great person has logged in!", Toast.LENGTH_LONG).show();
                 }
             }
         });
