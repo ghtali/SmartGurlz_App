@@ -44,7 +44,7 @@ public class MainMenu extends AppCompatActivity {
                     setTitle("Fragment Title One");
                     FragmentOne fragment = new FragmentOne();
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
+                    fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction.commit();// remember to commit fragment
                     return true;
                 case R.id.navigation_dashboard:
@@ -53,14 +53,14 @@ public class MainMenu extends AppCompatActivity {
 
                    // LoginFragment fragment2 = new LoginFragment();
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction2.replace(R.id.container, fragment2 , "FragmentName"); // fram is the id of FrameLayout in xml file()
+                    fragmentTransaction2.replace(R.id.container, fragment2 , "FragmentName");  // container is the id of Layout in xml file()
                     fragmentTransaction2.commit();
                     return true;
                 case R.id.navigation_notifications:
                     setTitle("Fragment Three");
                     FragmentThree fragment3 = new FragmentThree();
                     FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction3.replace(R.id.container, fragment3, "FragmentName"); // fram is the id of FrameLayout in xml file()
+                    fragmentTransaction3.replace(R.id.container, fragment3, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction3.commit();
                     return true;
             }
