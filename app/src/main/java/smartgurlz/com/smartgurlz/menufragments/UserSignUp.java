@@ -82,6 +82,8 @@ public class UserSignUp extends Fragment {
             public void onClick(View v) {
 
                 registerUser(editTextEmail.getText().toString().trim(),getEditTextPassword.getText().toString().trim());
+                editTextEmail.getText().clear();
+                getEditTextPassword.getText().clear();
 
             }
         });

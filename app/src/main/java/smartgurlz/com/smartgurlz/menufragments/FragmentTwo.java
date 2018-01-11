@@ -94,6 +94,9 @@ public class FragmentTwo extends Fragment  {
 
                 loginUser(username_input.getText().toString().trim(),password_input.getText().toString().trim());
 
+                username_input.getText().clear();
+                password_input.getText().clear();
+
                 /*
                 //Checks if the password and username is correct. Redirects to the menu if correct.
                 if (username_input.getText().toString().equals(name) &&
@@ -149,7 +152,14 @@ public class FragmentTwo extends Fragment  {
        forgotPassword.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-                loginUser("Hej","123");
+              //  loginUser("Hej","123");
+               ForgotPass_Frag forgotPassword = new ForgotPass_Frag();
+
+               FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+               fragmentTransaction2.replace(R.id.container, forgotPassword, "FragmentName"); // fram is the id of FrameLayout in xml file()
+               fragmentTransaction2.commit();
+
+
            }
 
        });
@@ -168,7 +178,7 @@ public class FragmentTwo extends Fragment  {
 
                     //Fjern denne if og else løkke
                     if (password.length() < 6) {
-                       Snackbar snackbar = Snackbar.make(login_fID, "Password is less great than 6 characters long great", Snackbar.LENGTH_SHORT);
+                       Snackbar snackbar = Snackbar.make(login_fID, "Password is less than 6 characters long", Snackbar.LENGTH_SHORT);
                         snackbar.show();
                     }
                     else {
