@@ -36,6 +36,7 @@ public class UserSignUp extends Fragment {
     private EditText getEditTextPassword;
     private TextView textViewSignIn;
     private FirebaseAuth firebaseAuth;
+    private TextView already_txt;
 
     public UserSignUp() {
         // Required empty public constructor
@@ -68,6 +69,8 @@ public class UserSignUp extends Fragment {
 
             textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
 
+            already_txt = (TextView) view.findViewById(R.id.already_txt);
+
             //buttonRegister.setOnClickListener((View.OnClickListener) this);
 
            // textViewSignIn.setOnClickListener((View.OnClickListener) this);
@@ -81,6 +84,18 @@ public class UserSignUp extends Fragment {
                 registerUser(editTextEmail.getText().toString().trim(),getEditTextPassword.getText().toString().trim());
 
             }
+        });
+
+
+        already_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTwo loginfrag = new FragmentTwo();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.container, loginfrag).commit();
+
+            }
+
         });
 
         //}
