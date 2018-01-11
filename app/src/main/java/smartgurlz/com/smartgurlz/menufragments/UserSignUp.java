@@ -60,13 +60,13 @@ public class UserSignUp extends Fragment {
 
 
 
-           buttonRegister = view.findViewById(R.id.buttonRegister);
+           buttonRegister = (Button) view.findViewById(R.id.buttonRegister);
 
-            editTextEmail = view.findViewById(R.id.editTextEmail);
+            editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
 
-            getEditTextPassword = view.findViewById(R.id.editTextPassword);
+            getEditTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
 
-            textViewSignIn = view.findViewById(R.id.textViewSignIn);
+            textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
 
             //buttonRegister.setOnClickListener((View.OnClickListener) this);
 
