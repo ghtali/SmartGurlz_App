@@ -23,9 +23,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import smartgurlz.com.smartgurlz.MainMenu;
 import smartgurlz.com.smartgurlz.R;
+import smartgurlz.com.smartgurlz.control.UserControl;
 
 /**@author Mads & Ana-Maria 10-01-18
  * A simple {@link Fragment} subclass.
@@ -37,6 +41,8 @@ public class UserSignUp extends Fragment {
     private EditText getEditTextPassword;
     private FirebaseAuth firebaseAuth;
     private TextView already_txt;
+    private EditText username_edt;
+    private DatabaseReference mDatabase;
 
     public UserSignUp() {
         // Required empty public constructor
@@ -50,40 +56,43 @@ public class UserSignUp extends Fragment {
         View view = inflater.inflate(R.layout.fragment_user_sign_up, container, false);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        username_edt = (EditText) view.findViewById(R.id.username_edt);
 
         //Toast.makeText(getActivity().getApplicationContext(), "Vi kommer ind", Toast.LENGTH_LONG).show();
 
-       // if (firebaseAuth.getCurrentUser() != null) {
+        // if (firebaseAuth.getCurrentUser() != null) {
 
-            //UserProfile userProfile = new UserProfile();
-            //FragmentManager fragmentManager = getFragmentManager();
-            //fragmentManager.beginTransaction().replace(R.id.userprofileLayout, userProfile).commit();
+        //UserProfile userProfile = new UserProfile();
+        //FragmentManager fragmentManager = getFragmentManager();
+        //fragmentManager.beginTransaction().replace(R.id.userprofileLayout, userProfile).commit();
 
 
+        buttonRegister = (Button) view.findViewById(R.id.buttonRegister);
 
-           buttonRegister = (Button) view.findViewById(R.id.buttonRegister);
+        editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
 
-            editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
+        getEditTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
 
-            getEditTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
+        // textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
 
-           // textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
+        already_txt = (TextView) view.findViewById(R.id.already_txt);
 
-            already_txt = (TextView) view.findViewById(R.id.already_txt);
+        //buttonRegister.setOnClickListener((View.OnClickListener) this);
 
-            //buttonRegister.setOnClickListener((View.OnClickListener) this);
-
-           // textViewSignIn.setOnClickListener((View.OnClickListener) this);
-
+        // textViewSignIn.setOnClickListener((View.OnClickListener) this);
 
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                registerUser(editTextEmail.getText().toString().trim(),getEditTextPassword.getText().toString().trim());
+                registerUser(editTextEmail.getText().toString().trim(), getEditTextPassword.getText().toString().trim());
                 editTextEmail.getText().clear();
                 getEditTextPassword.getText().clear();
+                username_edt.getText().clear();
+                generateUser();
 
             }
         });
@@ -95,9 +104,8 @@ public class UserSignUp extends Fragment {
                 FragmentTwo loginfrag = new FragmentTwo();
 
                 FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
-                fragmentTransaction2.replace(R.id.container, loginfrag , "FragmentName"); // fram is the id of FrameLayout in xml file()
+                fragmentTransaction2.replace(R.id.container, loginfrag, "FragmentName"); // fram is the id of FrameLayout in xml file()
                 fragmentTransaction2.commit();
-
 
 
             }
@@ -128,7 +136,7 @@ public class UserSignUp extends Fragment {
     }
     */
 
-       // return inflater.inflate(R.layout.fragment_user_sign_up, container, false);
+        // return inflater.inflate(R.layout.fragment_user_sign_up, container, false);
         return view;
 
     }
@@ -157,21 +165,39 @@ public class UserSignUp extends Fragment {
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
+                      //   generateUser(username, email, password);
                         if (!task.isSuccessful()) {
                             //user is successfully registered and logged in
                             //we will start the profile activity here
                             //show the user a message with Toast
-                            Log.d("ERROR","Error" + task.getException());
+                            Log.d("ERROR", "Error" + task.getException());
                             Toast.makeText(getActivity().getApplicationContext(), "ERROR" + task.getException(), Toast.LENGTH_LONG).show();
-                        }
-                        else {
+                        } else {
                             Toast.makeText(getActivity().getApplicationContext(), "Registered successfuly!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
 
-                }
+    }
+
+    public void generateUser() {
+        String username = username_edt.getText().toString();
+        UserControl userInformation = new UserControl(username);
+
+        FirebaseUser bruger = firebaseAuth.getCurrentUser();
+
+
+        mDatabase.child("user").child("userID").child(bruger.getUid()).setValue(userInformation);
+        Toast.makeText(getActivity(), "Username saved...", Toast.LENGTH_LONG).show();
+
+       // mDatabase.child("user").child("userID").setValue(userInformation);
+
+
+           /* FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference user = database.getReference("user");
+            UserProfile user = new UserProfile(username, password);
+            users.push().setValue(user);*/
+
+    }
 
 }
-
