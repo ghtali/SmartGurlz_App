@@ -29,6 +29,19 @@
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".GameActivity" />
         <activity android:name=".HighscoreActivity" />
+
+        <activity android:name=".control.FirebaseHandler">
+
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <action android:name="android.intent.action.LAUNCHER" />
+
+                </intent-filter>
+
+
+        </activity>
+
+
         <activity
             android:name=".MainMenu"
             android:label="@string/title_activity_main_menu"></activity>

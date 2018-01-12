@@ -2,7 +2,6 @@ package smartgurlz.com.smartgurlz.control;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -20,55 +19,48 @@ public class FirebaseHandler extends AppCompatActivity {
     private TextView goldPlayerPoints;
     private TextView silverPlayerPoints;
     private TextView bronzePlayerPoints;
-    private DatabaseReference mFirebaseDatabase;
+    private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
-
-    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Displaying toolbar icon
+/*        // Displaying toolbar icon
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);*/
 
         goldPlayerPoints = findViewById(R.id.goldPlayerPoints);
         silverPlayerPoints = findViewById(R.id.silverPlayerPoints);
         bronzePlayerPoints = findViewById(R.id.bronzePlayerPoints);
 
-        mFirebaseInstance = FirebaseDatabase.getInstance();
 
-        // get reference to 'users' node
-        mFirebaseDatabase = mFirebaseInstance.getReference("users");
+        // get reference to 'Levels' node
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        //mDatabase.child("Levels");
 
-        // store app title to 'app_title' node
-        mFirebaseInstance.getReference("app_title").setValue("Realtime Database");
+ /*       // store app title to 'app_title' node
+        mFirebaseInstance.getReference("app_title").setValue("Realtime Database");*/
 
-        // app_title change listener
-        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
+        ValueEventListener scoreListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-               // Log.d(TAG, "Value is: " + HighScore);
+                // Get ScoreControl object and use the values to update the UI
+                ScoreControl scores = dataSnapshot.getValue(ScoreControl.class);
+
+                Log.d(String.valueOf(scores), "Levels are " + scores.gold);
+
+                // ...
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.e(TAG, "Failed to read app title value.", error.toException());
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting ScoreControl failed, log a message
+                Log.w(TAG, "levels:onCancelled", databaseError.toException());
+                // ...
             }
-        });
+        };
+        mDatabase.addValueEventListener(scoreListener);
     }
 
-    private void updateUser(String name, String email) {
-        // updating the user via child nodes
-        if (!TextUtils.isEmpty(name))
-            mFirebaseDatabase.child(userId).child("name").setValue(name);
-
-        if (!TextUtils.isEmpty(email))
-            mFirebaseDatabase.child(userId).child("email").setValue(email);
-    }
 }
