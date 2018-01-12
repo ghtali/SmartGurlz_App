@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class ForgotPass_Frag extends Fragment {
     private TextView forgot_txt;
     private Button back_btn;
     private Button forgot_btn;
-    private ConstraintLayout forgotPassword_layout;
+    private LinearLayout forgotPassword_layout;
 
     private FirebaseAuth auth;
 
@@ -51,7 +52,7 @@ public class ForgotPass_Frag extends Fragment {
         forgot_btn = (Button) view.findViewById(R.id.forgot_btn);
         forgot_txt = (TextView) view.findViewById(R.id.forgotPassword_txt);
         back_btn = (Button) view.findViewById(R.id.back_btn);
-        forgotPassword_layout = (ConstraintLayout) view.findViewById(R.id.forgotPassword_layout);
+        forgotPassword_layout = (LinearLayout) view.findViewById(R.id.forgotPassword_layout);
 
         auth = FirebaseAuth.getInstance();
 
