@@ -34,6 +34,14 @@
             app:layout_constraintRight_toRightOf="parent"
             tools:layout_editor_absoluteY="128dp" />
 
+        <EditText
+            android:id="@+id/username_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/editTextEmail"

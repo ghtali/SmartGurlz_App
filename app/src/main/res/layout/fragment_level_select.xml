@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smartgurlz.com.smartgurlz.menufragments.LevelSelect">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="433dp"
+        android:layout_height="343dp"
+        android:layout_marginStart="200dp"
+        android:src="@drawable/emma" />
+
+    <ListView
+        android:clickable="true"
+        android:id="@+id/levelList"
+        android:layout_width="240dp"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
