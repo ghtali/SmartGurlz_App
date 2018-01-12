@@ -3,12 +3,14 @@ package smartgurlz.com.smartgurlz;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import smartgurlz.com.smartgurlz.menufragments.FragmentFour;
 import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
@@ -41,6 +43,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
 
             BottomNavigationViewUtils.disableShiftMode(bottomNavigationView);*/
 
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     setTitle("LevelFragment");
@@ -65,10 +68,19 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     fragmentTransaction3.replace(R.id.container, fragment3, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction3.commit();
                     return true;
+                case R.id.navigation_welcome:
+                    setTitle("Welcome Fragment");
+                    FragmentFour fragment4 = new FragmentFour();
+                    FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction4.replace(R.id.container, fragment4, "FragmentName"); // container is the id of Layout in xml file()
+                    fragmentTransaction4.commit();
+                    return true;
             }
             return false;
         }
     };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,13 +88,16 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+      //  BottomNavigationView bottomNavigation = new BottomNavigationView;
         //mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+      //  bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
 
-        //When app starts FragmentOne will be displayed
-        setTitle("LevelFragment");
-        LevelFragment fragment = new LevelFragment();
+
+        //When app starts Welcome Fragment will be displayed until other option is chosen
+        setTitle("Welcome Fragment");
+        FragmentFour fragment = new FragmentFour();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
         fragmentTransaction.commit();
