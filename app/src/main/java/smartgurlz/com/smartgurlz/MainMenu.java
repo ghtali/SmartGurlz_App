@@ -13,6 +13,7 @@ import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
 import smartgurlz.com.smartgurlz.menufragments.LevelFragment;
+import smartgurlz.com.smartgurlz.menufragments.LevelSelect;
 import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent;
 
 public class MainMenu extends AppCompatActivity implements LevelFragment.OnListFragmentInteractionListener{
@@ -43,8 +44,8 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    setTitle("LevelFragment");
-                    LevelFragment fragment = new LevelFragment();
+                    setTitle("LevelSelect");
+                    LevelSelect fragment= new LevelSelect();
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction.commit();// remember to commit fragment
