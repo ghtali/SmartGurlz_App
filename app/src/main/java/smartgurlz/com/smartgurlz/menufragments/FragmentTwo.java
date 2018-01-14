@@ -88,15 +88,21 @@ public class FragmentTwo extends Fragment  {
 
 
 
-                SharedPreferences sharedPref = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-                String name = sharedPref.getString("username", "");
-                String pw = sharedPref.getString("password", "");
+               // SharedPreferences sharedPref = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+               // String name = sharedPref.getString("username", "");
+               // String pw = sharedPref.getString("password", "");
+                if(username_input.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(), "Enter your email", Toast.LENGTH_SHORT).show();
+                }
+                if(password_input.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(), "Enter your password", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    loginUser(username_input.getText().toString().trim(), password_input.getText().toString().trim());
 
-                loginUser(username_input.getText().toString().trim(),password_input.getText().toString().trim());
-
-                username_input.getText().clear();
-                password_input.getText().clear();
-
+                    username_input.getText().clear();
+                    password_input.getText().clear();
+                }
                 /*
                 //Checks if the password and username is correct. Redirects to the menu if correct.
                 if (username_input.getText().toString().equals(name) &&
