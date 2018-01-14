@@ -56,7 +56,7 @@ public class UserSignUp extends Fragment {
         View view = inflater.inflate(R.layout.fragment_user_sign_up, container, false);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference("userID");
 
         username_edt = (EditText) view.findViewById(R.id.username_edt);
 
@@ -88,11 +88,19 @@ public class UserSignUp extends Fragment {
             @Override
             public void onClick(View v) {
 
-                registerUser(editTextEmail.getText().toString().trim(), getEditTextPassword.getText().toString().trim());
-                editTextEmail.getText().clear();
-                getEditTextPassword.getText().clear();
-                username_edt.getText().clear();
-                generateUser();
+                if(editTextEmail.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(), "Please enter your email", Toast.LENGTH_LONG).show();
+                }
+                if(getEditTextPassword.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(), "Please enter your password", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    generateUser();
+                    registerUser(editTextEmail.getText().toString().trim(), getEditTextPassword.getText().toString().trim());
+                    editTextEmail.getText().clear();
+                    getEditTextPassword.getText().clear();
+                    username_edt.getText().clear();
+                }
 
             }
         });
@@ -146,14 +154,14 @@ public class UserSignUp extends Fragment {
 
         if (TextUtils.isEmpty(email)) {
             //email is empty
-            //Toast.makeText("Please Enter Your Email!");
+          //  Toast.makeText(getActivity(),"Please enter your email!", Toast.LENGTH_LONG).show();
             //Stop the function from executing further
             //  return null;
 
         }
         if (TextUtils.isEmpty(password)) {
             //password is empty
-            //Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(getActivity(), "Please enter password", Toast.LENGTH_LONG).show();
             //Stop the function from executing further
             // return null;
         }
@@ -181,7 +189,7 @@ public class UserSignUp extends Fragment {
     }
 
     public void generateUser() {
-        String username = username_edt.getText().toString();
+        String username = username_edt.getText().toString().trim();
         UserControl userInformation = new UserControl(username);
 
         FirebaseUser bruger = firebaseAuth.getCurrentUser();
