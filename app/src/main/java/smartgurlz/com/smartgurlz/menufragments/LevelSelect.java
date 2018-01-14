@@ -33,26 +33,22 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
             R.drawable.lvl1, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,//lvl1
+            R.drawable.lock, R.drawable.lock,
+            R.drawable.lock, R.drawable.lock,
+             /* R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,//lvl1
-            R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,//lvl changes
-            R.drawable.lock, R.drawable.lock
+            R.drawable.lock, R.drawable.lock,*/
+
 
     };
     String[] listRank = new String[]{
-            "Level 1", "Level 2",
-            "Level 3", "Level 4",
-            "Level 5", "Level 6",
-            "Level 7", "Level 8",
-            "Level 9", "Level 10",
-            "Level 11", "Level 12",
-            "Level 13", "Level 15",
-            "Level 16", "Level 17",
-            "Level 18", "Level 18",
+
+            "1", "2",
+            "3", "4",
+            "5", "6",
+            "7", "8",
 
     };
 

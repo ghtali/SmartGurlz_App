@@ -1,27 +1,30 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/emma"
+
+
     tools:context="smartgurlz.com.smartgurlz.menufragments.LevelSelect">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ListView
-        android:clickable="true"
-        android:id="@+id/levelList"
-        android:layout_width="240dp"
-        android:layout_height="match_parent" />
-
     <TextView
         android:id="@+id/leveltext"
-        android:layout_width="364dp"
-        android:layout_height="55dp"
-        android:background="@drawable/logo"
-        android:gravity="right"
-
-
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/levelbg"
+        android:gravity="center"
         tools:ignore="InvalidId" />
 
-</LinearLayout>
+    <ListView
+        android:id="@+id/levelList"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:clickable="true" />
+
+</RelativeLayout>
