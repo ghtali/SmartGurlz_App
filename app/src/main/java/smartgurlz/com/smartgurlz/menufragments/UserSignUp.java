@@ -46,6 +46,7 @@ public class UserSignUp extends Fragment {
     private TextView already_txt;
     private EditText username_edt;
     private DatabaseReference mDatabase;
+    private String displayName;
 
     public UserSignUp() {
         // Required empty public constructor
@@ -59,7 +60,7 @@ public class UserSignUp extends Fragment {
         View view = inflater.inflate(R.layout.fragment_user_sign_up, container, false);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference("userID");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
       //  username_edt = (EditText) view.findViewById(R.id.username_edt);
 
@@ -92,9 +93,10 @@ public class UserSignUp extends Fragment {
             @Override
             public void onClick(View v) {
                 registerUser();
-                saveUsernam();
+                saveUsername();
                 editTextEmail.getText().clear();
                 getEditTextPassword.getText().clear();
+                username_edt.getText().clear();
 /*                if(editTextEmail.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Please enter your email", Toast.LENGTH_LONG).show();
                 }
@@ -237,8 +239,8 @@ public class UserSignUp extends Fragment {
 
     }
 
-    private void saveUsernam(){
-        String displayName = username_edt.getText().toString();
+    private void saveUsername(){
+        displayName = username_edt.getText().toString().trim();
 
         if(displayName.isEmpty()){
             username_edt.setError("Name required");
@@ -246,22 +248,26 @@ public class UserSignUp extends Fragment {
             return;
         }
 
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user != null){
             UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
                     .setDisplayName(displayName)
                     .build();
+
             user.updateProfile(profile)
-            .addOnCompleteListener(new OnCompleteListener<Void>() {
+            .addOnCompleteListener(new OnCompleteListener <Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(getActivity(), "username saved", Toast.LENGTH_SHORT).show();
-
+                       Toast.makeText(getActivity(), "username saved", Toast.LENGTH_SHORT).show();
+                        Log.d("Success", "user profile updated " + displayName);
+                    }else{
+                        Toast.makeText(getActivity(), "username not saved", Toast.LENGTH_LONG).show();
                     }
                 }
             });
         }
+
     }
 
    /* public void generateUser() {

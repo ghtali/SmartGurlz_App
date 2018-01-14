@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,17 +79,19 @@ public class FragmentTwo extends Fragment  {
         // Init Firebase Auth
         auth = FirebaseAuth.getInstance();
 
-        if (auth.getCurrentUser() != null) {
+        //if (auth.getCurrentUser() != null) {
             //Start aktivity
-        }
+       // }
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                loginUser();
 
 
-
-
+                /*
                // SharedPreferences sharedPref = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
                // String name = sharedPref.getString("username", "");
                // String pw = sharedPref.getString("password", "");
@@ -98,12 +101,23 @@ public class FragmentTwo extends Fragment  {
                 if(password_input.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Enter your password", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    loginUser(username_input.getText().toString().trim(), password_input.getText().toString().trim());
-                    Toast.makeText(getActivity(), "Welcome" + auth.getCurrentUser().getDisplayName().toString(), Toast.LENGTH_SHORT).show();
+                else  {
+
+                   // loginUser(username_input.getText().toString().trim(), password_input.getText().toString().trim());
+                    //Toast.makeText(getActivity(), "Welcome " + user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
                     username_input.getText().clear();
                     password_input.getText().clear();
                 }
+
+                if (user != null) {
+                    // User is signed in
+                    Toast.makeText(getActivity(), "Welcome " + user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
+
+                } else {
+                    // No user is signed in
+                    Toast.makeText(getActivity(), "Already logged in", Toast.LENGTH_SHORT).show();
+                } */
+
                 /*
                 //Checks if the password and username is correct. Redirects to the menu if correct.
                 if (username_input.getText().toString().equals(name) &&
@@ -135,8 +149,8 @@ public class FragmentTwo extends Fragment  {
                 //Toast.makeText(getActivity().getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
 
                 //so the password and username clears from the screen.
-                username_input.getText().clear();
-                password_input.getText().clear();
+               // username_input.getText().clear();
+               // password_input.getText().clear();
 
                 UserSignUp fragsignup = new UserSignUp();
 
@@ -163,7 +177,7 @@ public class FragmentTwo extends Fragment  {
                ForgotPass_Frag forgotPassword = new ForgotPass_Frag();
 
                FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
-               fragmentTransaction2.replace(R.id.container, forgotPassword, "FragmentName"); // fram is the id of FrameLayout in xml file()
+               fragmentTransaction2.replace(R.id.container, forgotPassword, "FragmentName");
                fragmentTransaction2.commit();
 
 
@@ -176,28 +190,65 @@ public class FragmentTwo extends Fragment  {
        //return inflater.inflate(R.layout.fragment_fragment_two, container, false);
         return view;
     }
-    private  void loginUser(String email, final String password) {
+    private  void loginUser() {
+        String email = username_input.getText().toString().trim();
+        String password = password_input.getText().toString().trim();
+
+        //email can't be empty
+        if (email.isEmpty()) {
+
+            username_input.setError("Email is required");
+            username_input.requestFocus();
+            return;
+
+        }
+        //Is it a legit email address
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            username_input.setError("Please enter a valid email");
+            username_input.requestFocus();
+            return;
+        }
+        //password can't be empty
+        if (password.isEmpty()) {
+
+            password_input.setError("Password is required");
+            password_input.requestFocus();
+            return;
+
+        }
+        if(password.length()<6){
+           password_input.setError("Minimum passwordlength should be 6 characters");
+            password_input.requestFocus();
+            return;
+        }
         auth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) {
 
-                    //Fjern denne if og else løkke
+                    /*//Fjern denne if og else løkke
                     if (password.length() < 6) {
                        Snackbar snackbar = Snackbar.make(login_fID, "Password is less than 6 characters long", Snackbar.LENGTH_SHORT);
-                        snackbar.show();
-                    }
-                    else {
+                        snackbar.show();*/
+                   // }
+                   // else {
                         Snackbar snackbar = Snackbar.make(login_fID, "Email or password is incorrect", Snackbar.LENGTH_SHORT);
                         snackbar.show();
                         //startActivity(new Intent(getActivity(), MainMenu.class));
                         //getActivity().finish();
                     }
-                }
-                else if(task.isSuccessful()){
+
+                else if (task.isSuccessful()){
                     FirebaseUser user = auth.getCurrentUser();
                     Toast.makeText(getActivity(), "A great person has logged in!", Toast.LENGTH_LONG).show();
+
+                    UserProfile userprofile = new UserProfile();
+                    FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+                    fragmentTransaction2.replace(R.id.container, userprofile, "FragmentName");
+                    fragmentTransaction2.commit();
+
+
                 }
             }
         });
