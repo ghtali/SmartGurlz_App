@@ -4,10 +4,12 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenu;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import smartgurlz.com.smartgurlz.menufragments.FragmentFour;
@@ -52,6 +54,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction.commit();// remember to commit fragment
+                    findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_dashboard:
                     setTitle("Fragment Title Two");
@@ -61,6 +64,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction2.replace(R.id.container, fragment2 , "FragmentName");  // container is the id of Layout in xml file()
                     fragmentTransaction2.commit();
+                    findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_notifications:
                     setTitle("Fragment Three");
@@ -68,6 +72,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction3.replace(R.id.container, fragment3, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction3.commit();
+                    findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
                     return true;
                 case R.id.navigation_welcome:
                     setTitle("Welcome Fragment");
@@ -75,6 +80,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction4.replace(R.id.container, fragment4, "FragmentName"); // container is the id of Layout in xml file()
                     fragmentTransaction4.commit();
+                    findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
                     return true;
             }
             return false;
@@ -102,6 +108,8 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // fram is the id of FrameLayout in xml file()
         fragmentTransaction.commit();
+
+        findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
     }
 
     @Override
