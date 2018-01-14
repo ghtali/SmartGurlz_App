@@ -24,7 +24,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -84,11 +86,13 @@ public class UserSignUp extends Fragment {
 
         // textViewSignIn.setOnClickListener((View.OnClickListener) this);
 
+        username_edt = (EditText) view.findViewById(R.id.username_edt);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser();
+                saveUsernam();
                 editTextEmail.getText().clear();
                 getEditTextPassword.getText().clear();
 /*                if(editTextEmail.getText().toString().isEmpty()){
@@ -216,14 +220,48 @@ public class UserSignUp extends Fragment {
                             //user is successfully registered and logged in
                             //we will start the profile activity here
                             //show the user a message with Toast
-                            Log.d("ERROR", "Error" + task.getException());
-                            Toast.makeText(getActivity().getApplicationContext(), "ERROR" + task.getException(), Toast.LENGTH_LONG).show();
+
+                            // If the user is already registered, an exception is thrown
+                            if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                                Toast.makeText(getActivity(), "This email is already registered",Toast.LENGTH_SHORT ).show();
+                            } else{
+                                Log.d("ERROR", "Error" + task.getException());
+                                Toast.makeText(getActivity().getApplicationContext(), "ERROR" + task.getException(), Toast.LENGTH_LONG).show();
+                            }
+
                         } else {
-                            Toast.makeText(getActivity().getApplicationContext(), "Registered successfuly!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity().getApplicationContext(), "Registered successfully!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
 
+    }
+
+    private void saveUsernam(){
+        String displayName = username_edt.getText().toString();
+
+        if(displayName.isEmpty()){
+            username_edt.setError("Name required");
+            username_edt.requestFocus();
+            return;
+        }
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if(user != null){
+            UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(displayName)
+                    .build();
+            user.updateProfile(profile)
+            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()){
+                        Toast.makeText(getActivity(), "username saved", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            });
+        }
     }
 
    /* public void generateUser() {

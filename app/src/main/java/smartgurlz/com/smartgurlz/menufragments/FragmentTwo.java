@@ -88,6 +88,7 @@ public class FragmentTwo extends Fragment  {
 
 
 
+
                // SharedPreferences sharedPref = getActivity().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
                // String name = sharedPref.getString("username", "");
                // String pw = sharedPref.getString("password", "");
@@ -99,7 +100,7 @@ public class FragmentTwo extends Fragment  {
                 }
                 else {
                     loginUser(username_input.getText().toString().trim(), password_input.getText().toString().trim());
-
+                    Toast.makeText(getActivity(), "Welcome" + auth.getCurrentUser().getDisplayName().toString(), Toast.LENGTH_SHORT).show();
                     username_input.getText().clear();
                     password_input.getText().clear();
                 }
