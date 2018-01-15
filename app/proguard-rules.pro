@@ -1,3 +1,5 @@
+# Add this global rule
+-keepattributes Signature
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
 # in /Users/Ali/Library/Android/sdk/tools/proguard/proguard-android.txt
@@ -25,4 +27,8 @@
 #-renamesourcefileattribute SourceFile
 -keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
     boolean mShiftingMode;
+}
+
+-keepclassmembers class smartgurlz.smartgurlz.** {
+  *;
 }

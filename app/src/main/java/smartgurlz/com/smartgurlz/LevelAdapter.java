@@ -1,4 +1,4 @@
-package smartgurlz.com.smartgurlz;
+/*package smartgurlz.com.smartgurlz;
 
 import android.content.Context;
 import android.view.View;
@@ -7,21 +7,22 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-/**
- * Created by Ali on 27/11/2017.
- */
+import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
+
+
 
 public class LevelAdapter extends BaseAdapter {
-    private Context mContext;
+    private FragmentOne mContext;
 
 
-    public LevelAdapter(Context c) {
+    public LevelAdapter(FragmentOne c) {
         mContext = c;
     }
 
     public int getCount() {
         return mThumbIds.length;
     }
+    private  ImageView imageView = new ImageView();
 
     public Object getItem(int position) {
         return null;
@@ -32,10 +33,10 @@ public class LevelAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
+
             imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
@@ -64,3 +65,4 @@ public class LevelAdapter extends BaseAdapter {
 
 }
 
+*/

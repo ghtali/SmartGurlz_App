@@ -52,7 +52,8 @@ public class WelcomeActivity extends FragmentActivity {
 
 
         if (clickcount == 0) {
-            textBubble.setText("Hi, I’m Emma.I love to paint!");
+            textBubble.setText("Hi, I’m Emma.\n I love to paint!");
+
         }
 
 

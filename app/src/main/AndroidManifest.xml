@@ -23,17 +23,19 @@
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="smartgurlz.com.smartgurlz.MenuActivity" />
+                android:value="smartgurlz.com.smartgurlz.MainMenu"
+                 />
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".GameActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".SelectLevel" />
         <activity android:name=".HighscoreActivity" />
+        <activity android:name=".control.FirebaseHandler"/>
+
         <activity
             android:name=".MainMenu"
-            android:label="@string/title_activity_main_menu"></activity>
+            android:label="@string/title_activity_main_menu">
+
+        </activity>
     </application>
 
 </manifest>
