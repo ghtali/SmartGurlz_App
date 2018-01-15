@@ -2,24 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+    <!-- Removed names to make them invisible in navigation menu -->
     <item
         android:id="@+id/navigation_welcome"
         android:icon="@drawable/ic_play_circle_outline_black_24dp"
-        android:title="Play"/>
+        android:title=""/>
 
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_play_circle_outline_black_24dp"
-        android:title="Play"/>
+        android:title=""/>
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_person_black_24dp"
-        android:title="Login"/>
+        android:title=""/>
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_format_list_numbered_black_24dp"
-        android:title="Highscore"/>
+        android:title=""/>
 
 </menu>
