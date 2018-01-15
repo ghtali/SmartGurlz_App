@@ -40,6 +40,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:11.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'nl.dionsegijn:konfetti:1.1.0'
+    compile 'com.android.support:design:26.1.0'
     testCompile 'junit:junit:4.12'
     implementation project(':SmartGirlz')
 }
