@@ -1,52 +1,67 @@
 package smartgurlz.com.smartgurlz.control;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
+import smartgurlz.com.smartgurlz.R;
 
-public class FirebaseHandler extends AppCompatActivity {
+public class FirebaseHandler {
 
     private static final String TAG = FirebaseHandler.class.getSimpleName();
-    private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
+    public static Score score;
 
-    //   public final List<Score> scores = new ArrayList<>();
+    void onStart() {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-/*
+    }
 
-        // get reference to 'Levels' node
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Levels").child("Score");
+    public static void hentScores(Runnable runnable, final View view) {
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Levels").child("Score");
+        final Runnable r = runnable;
 
 
-        Log.d("Hello", "Bye");
+        final TextView bronzePlayerPoints;
+        final TextView silverPlayerPoints;
+        final TextView goldPlayerPoints;
 
-       ValueEventListener scoreListener = new ValueEventListener() {
+        bronzePlayerPoints = (TextView) view.findViewById(R.id.bronzePlayerPoints);
+        silverPlayerPoints = (TextView) view.findViewById(R.id.silverPlayerPoints);
+        goldPlayerPoints = (TextView) view.findViewById(R.id.goldPlayerPoints);
+
+
+        ValueEventListener scoreListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Score object and use the values to update the UI
-                //Score score = dataSnapshot.getValue(Score.class);
-                //Score score = dataSnapshot.getValue(Score.class);
+
 
                 Log.d("Data øøøøøøøøøøø", dataSnapshot.toString()); //retrieve all data
-                //Log.d("Data", scores.getBronze() + " " + scores.getGold());
-                // Log.d("Data", dataSnapshot.child("Bronze").toString()); //retrieve specific value of a child
+                // Get Score object and use the values to update the UI
+                score = dataSnapshot.getValue(Score.class);
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
 
-                //iterating through all the nodes
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) { // az inja
-                    //getting
-                    Score score = postSnapshot.getValue(Score.class);
-                    //adding
-                    scores.add(score);
 
+                    if (childSnapshot.getKey().equalsIgnoreCase("Bronze")) {
+                        bronzePlayerPoints.setText(childSnapshot.getValue().toString());
+                    }
+                    if (childSnapshot.getKey().equalsIgnoreCase("Silver")) {
+                        silverPlayerPoints.setText(childSnapshot.getValue().toString());
+                    }
+                    if (childSnapshot.getKey().equalsIgnoreCase("Gold")) {
+                        goldPlayerPoints.setText(childSnapshot.getValue().toString());
+                    }
+
+
+                    System.out.println(childSnapshot.getValue());
+                    //System.out.println("long: "+ l);
                 }
+                r.run();
 
 
             }
@@ -58,9 +73,7 @@ public class FirebaseHandler extends AppCompatActivity {
                 // ...
             }
         };
-        mDatabase.addValueEventListener(scoreListener);*/
-
-
+        mDatabase.addValueEventListener(scoreListener);
 
     }
 

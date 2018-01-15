@@ -1,58 +1,65 @@
 package smartgurlz.com.smartgurlz.control;
 
-import com.google.firebase.database.Exclude;
-import com.google.firebase.database.IgnoreExtraProperties;
-
-import java.util.HashMap;
-
-
-@IgnoreExtraProperties
-public class Score {
-    private String gold;
-    private String silver;
-    private String bronze;
-    private String highScore;
+public final class Score{
+    private Long gold;
+    private Long silver;
+    private Long bronze;
+    private Long highScore;
 
     public Score(){
-        //Log.i("Gold from Score class", String.valueOf(getGold()));
-        // FirebaseHandler firebaseHandler = new FirebaseHandler();
-        //gold = firebaseHandler.
-
 
     }
 
-    public Score(String gold, String silver, String bronze, String highScore) {
+    public Score(Long gold, Long silver, Long bronze, Long highScore) {
         this.gold = gold;
         this.silver = silver;
         this.bronze = bronze;
         this.highScore = highScore;
     }
 
-    @Exclude
-    public HashMap<String, String> toMap() {
-        HashMap<String, String> result = new HashMap<>();
-        result.put("HighScore", highScore);
-        result.put("Gold", gold);
-        result.put("Silver", silver);
-        result.put("Bronze", bronze);
-
-        return result;
+    public void setGold(Long gold) {
+        this.gold = gold;
     }
 
-    public String getGold() {
+    public void setSilver(Long silver) {
+        this.silver = silver;
+    }
+
+    public void setBronze(Long bronze) {
+        this.bronze = bronze;
+    }
+
+    public void setHighScore(Long highScore) {
+        this.highScore = highScore;
+    }
+
+
+    public Long getGold() {
         return gold;
     }
 
-    public String getSilver() {
+    public Long getSilver() {
         return silver;
     }
 
-    public String getBronze() {
+    public Long getBronze() {
         return bronze;
     }
 
-    public String getHighScore() {
+    public Long getHighScore() {
         return highScore;
     }
+
+/*    @Exclude
+    public Map<Long, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put(String.valueOf("Gold"), gold);
+        result.put(String.valueOf("Silver"), silver);
+        result.put(String.valueOf("Bronze"), bronze);
+        result.put(String.valueOf("HighScore"), highScore);
+
+        return result;
+    }*/
+
 }
 
