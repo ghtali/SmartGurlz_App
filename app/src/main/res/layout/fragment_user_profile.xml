@@ -33,12 +33,18 @@
             android:id="@+id/changePassword_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="110dp"
+            android:layout_marginBottom="0dp"
             android:text="Change Password" />
 
         <Button
             android:id="@+id/signOut_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="10dp"
             android:text="Sign out" />
 
         <TextView
@@ -46,6 +52,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Delete user"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark" />
 

@@ -2,6 +2,7 @@ package smartgurlz.com.smartgurlz.menufragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -27,6 +30,7 @@ public class UserProfile extends Fragment {
     private TextView welcome_txt, deleteUser_txt;
     private Button signOut_btn, changePassword_btn;
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
 
     public UserProfile() {
         // Required empty public constructor
@@ -45,7 +49,7 @@ public class UserProfile extends Fragment {
         signOut_btn = (Button) view.findViewById(R.id.signOut_btn);
         changePassword_btn = (Button) view.findViewById(R.id.changePassword_btn);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
         mAuth = FirebaseAuth.getInstance();
 
         if (user != null) {
@@ -65,6 +69,29 @@ public class UserProfile extends Fragment {
             }
         });
 
+        deleteUser_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.delete()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getActivity(), "User account deleted.", Toast.LENGTH_LONG).show();
+                                    //Log the user out and goes back to login screen
+                                    mAuth.signOut();
+                                    FragmentTwo loginfragt = new FragmentTwo();
+                                    FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+                                    fragmentTransaction2.replace(R.id.container, loginfragt, "FragmentName"); // fram is the id of FrameLayout in xml file()
+                                    fragmentTransaction2.commit();
+                                } else{
+                                    Toast.makeText(getActivity(), "Error - account not deleted", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+
+            }
+        });
 
         } else {
             // No user is signed in
