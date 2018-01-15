@@ -65,6 +65,7 @@ public class FragmentTwo extends Fragment  {
 
 
 
+
         username_input = (EditText) view.findViewById(R.id.userName_etx);
         password_input = (EditText) view.findViewById(R.id.passWord_etx);
 
@@ -79,9 +80,15 @@ public class FragmentTwo extends Fragment  {
         // Init Firebase Auth
         auth = FirebaseAuth.getInstance();
 
-        //if (auth.getCurrentUser() != null) {
-            //Start aktivity
-       // }
+        //Should make sure that, if a user is logged in, they are on the userProfile
+        if (auth.getCurrentUser() != null) {
+            UserProfile profileFrag = new UserProfile();
+            FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+            fragmentTransaction2.replace(R.id.container, profileFrag, "FragmentName"); // fram is the id of FrameLayout in xml file()
+            fragmentTransaction2.commit();
+        }
+
+
 
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override

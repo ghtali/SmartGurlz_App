@@ -3,14 +3,19 @@ package smartgurlz.com.smartgurlz.menufragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
 
 import smartgurlz.com.smartgurlz.R;
 
@@ -19,7 +24,9 @@ import smartgurlz.com.smartgurlz.R;
  */
 public class UserProfile extends Fragment {
 
-    private TextView welcome_txt;
+    private TextView welcome_txt, deleteUser_txt;
+    private Button signOut_btn, changePassword_btn;
+    private FirebaseAuth mAuth;
 
     public UserProfile() {
         // Required empty public constructor
@@ -34,12 +41,29 @@ public class UserProfile extends Fragment {
         View view = inflater.inflate(R.layout.fragment_user_profile, container, false);
 
         welcome_txt = (TextView) view.findViewById(R.id.welcome_txt);
+        deleteUser_txt = (TextView) view.findViewById(R.id.delete_txt);
+        signOut_btn = (Button) view.findViewById(R.id.signOut_btn);
+        changePassword_btn = (Button) view.findViewById(R.id.changePassword_btn);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+
         if (user != null) {
             // User is signed in
             String name = user.getDisplayName();
             welcome_txt.setText("Welcome: " + name);
+
+        signOut_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               mAuth.signOut();
+                Toast.makeText(getActivity(), "You have signed out", Toast.LENGTH_SHORT).show();
+                FragmentTwo loginfragt = new FragmentTwo();
+                FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
+                fragmentTransaction2.replace(R.id.container, loginfragt, "FragmentName"); // fram is the id of FrameLayout in xml file()
+                fragmentTransaction2.commit();
+            }
+        });
 
 
         } else {

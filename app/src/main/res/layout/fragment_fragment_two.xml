@@ -5,10 +5,19 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="smartgurlz.com.smartgurlz.menufragments.FragmentTwo">
 
 
     <!-- TODO: Update blank fragment layout -->
+ <!--   <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"> -->
 
     <TextView
         android:id="@+id/username_txt"
@@ -37,19 +46,25 @@
         android:inputType="textEmailAddress"
         android:textSize="14sp" />
 
+
+
+
+      <!--  <android.support.design.widget.TextInputEditText -->
     <EditText
-        android:id="@+id/passWord_etx"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:hint="Type your password"
-        android:inputType="textPassword"
-        android:textSize="14sp" />
+            android:id="@+id/passWord_etx"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="160dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="60dp"
+            android:ems="10"
+            android:hint="Type your password"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+
 
     <TextView
         android:id="@+id/password_txt"
@@ -114,6 +129,6 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="12sp" />
 
-
+  <!--  </android.support.design.widget.TextInputLayout> -->
 </FrameLayout>
 
