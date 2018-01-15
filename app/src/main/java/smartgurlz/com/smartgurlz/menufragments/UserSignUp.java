@@ -30,6 +30,8 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.concurrent.Executor;
+
 import smartgurlz.com.smartgurlz.MainMenu;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.control.UserControl;
@@ -93,10 +95,11 @@ public class UserSignUp extends Fragment {
             @Override
             public void onClick(View v) {
                 registerUser();
-                saveUsername();
+             //   saveUsername();
+             //   username_edt.getText().clear();
                 editTextEmail.getText().clear();
                 getEditTextPassword.getText().clear();
-                username_edt.getText().clear();
+               // username_edt.getText().clear();
 /*                if(editTextEmail.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Please enter your email", Toast.LENGTH_LONG).show();
                 }
@@ -217,7 +220,7 @@ public class UserSignUp extends Fragment {
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        //   generateUser(username, email, password);
+                       // saveUsername();
                         if (!task.isSuccessful()) {
                             //user is successfully registered and logged in
                             //we will start the profile activity here
@@ -233,6 +236,8 @@ public class UserSignUp extends Fragment {
 
                         } else {
                             Toast.makeText(getActivity().getApplicationContext(), "Registered successfully!", Toast.LENGTH_LONG).show();
+                            saveUsername();
+                            username_edt.getText().clear();
                         }
                     }
                 });

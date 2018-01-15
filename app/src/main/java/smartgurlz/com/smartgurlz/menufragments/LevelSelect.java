@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -27,7 +28,8 @@ import smartgurlz.com.smartgurlz.WelcomeActivity;
 public class LevelSelect extends Fragment implements AdapterView.OnItemClickListener {
 
      TextView  leveltext;
-    ListView listView;
+     GridView gridView2;
+     TextView text100;
     ImageView imageView;
     Integer[] imgid = new Integer[]{
             R.drawable.lvl1, R.drawable.lock,
@@ -35,20 +37,19 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
-             /* R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
             R.drawable.lock, R.drawable.lock,
-            R.drawable.lock, R.drawable.lock,*/
+            R.drawable.lock, R.drawable.lock,
+            R.drawable.lock, R.drawable.lock,
 
 
     };
     String[] listRank = new String[]{
 
-            "1", "2",
-            "3", "4",
-            "5", "6",
-            "7", "8",
+            "1", "2","3", "4",
+            "5", "6", "7", "8",
+           "9", "10","11", "12",
 
     };
 
@@ -64,28 +65,30 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
 
         View view = inflater.inflate( R.layout.fragment_level_select, container, false );
 
-        listView = ( ListView ) view.findViewById( R.id.levelList );
+       // listView = ( ListView ) view.findViewById( R.id.levelList );
 
            leveltext= (TextView) view.findViewById( R.id.leveltext );
         imageView = ( ImageView ) view.findViewById( R.id.icon );
+        gridView2= (GridView) view.findViewById( R.id.gridView2 );
+         TextView txtTitle = (TextView )view.findViewById(R.id.text100);
 
                 ;CustomListAdapter adapter = new CustomListAdapter( getActivity(), listRank, imgid);
 
-        listView.setAdapter( adapter );
+        gridView2.setAdapter( adapter );
 
 
-        listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+        gridView2.setOnItemClickListener( new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
 
-                if (position !=0 ){
+                if (position == 0 ){
 
-                    Toast.makeText( getActivity(),"level låst" , Toast.LENGTH_LONG ).show();
+                    startActivity( new Intent( getActivity().getApplicationContext(), WelcomeActivity.class ) );
 
                 }
                 else {
-                    startActivity( new Intent( getActivity().getApplicationContext(), WelcomeActivity.class ) );
 
+                    Toast.makeText( getActivity(),"level låst"+"\nDu har ikke nok point ", Toast.LENGTH_LONG ).show();
                 }
 
 

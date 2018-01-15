@@ -15,16 +15,27 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/levelbg"
-        android:gravity="center"
-        tools:ignore="InvalidId" />
+        android:background="@drawable/levelbg1" />
 
-    <ListView
-        android:id="@+id/levelList"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:clickable="true" />
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:background="@android:color/transparent">
+
+        <GridView
+
+            android:id="@+id/gridView2"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:clickable="true"
+            android:numColumns="3"
+            android:background="@android:color/transparent">
+
+        </GridView>
+    </LinearLayout>
 
 </RelativeLayout>
