@@ -14,6 +14,8 @@ import nl.dionsegijn.konfetti.models.Size;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.control.FirebaseHandler;
 
+import static smartgurlz.com.smartgurlz.control.FirebaseHandler.score;
+
 /**
  * A simple {@link Fragment} subclass.
  *
@@ -74,7 +76,11 @@ public class FragmentThree extends Fragment implements Runnable{
                 .addSizes(new Size(12, 5f))
                 .setPosition(1000f, konfettiView.getWidth() + 300f, -50f, -50f)
                 .stream(150, 1500L);
+//        Log.d("Fragment333333", score.getGold() + " og "); //retrieve all data
 
+        //goldPlayerPoints.setText(score.getGold());
+        //    silverPlayerPoints.setText(""+score.getSilver());
+        //  bronzePlayerPoints.setText(""+score.getBronze());
 
     }
 

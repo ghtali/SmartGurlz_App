@@ -26,10 +26,6 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
     private TextView mTextMessage;
 
 
-
-
-
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -47,7 +43,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     setTitle("LevelSelect");
                     LevelSelect fragment= new LevelSelect();
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.container, fragment, "FragmentName"); // container is the id of Layout in xml file()
+                    fragmentTransaction.replace(R.id.container, fragment, "Fragm1"); // container is the id of Layout in xml file()
                     fragmentTransaction.commit();// remember to commit fragment
 
                     // Set view to Welcomescreen to gone, making it non-selectable
@@ -59,7 +55,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
 
                    // LoginFragment fragment2 = new LoginFragment();
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction2.replace(R.id.container, fragment2 , "FragmentName");  // container is the id of Layout in xml file()
+                    fragmentTransaction2.replace(R.id.container, fragment2 , "Frag2");  // container is the id of Layout in xml file()
                     fragmentTransaction2.commit();
 
                     return true;
@@ -67,7 +63,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     setTitle("Fragment Three");
                     FragmentThree fragment3 = new FragmentThree();
                     FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction3.replace(R.id.container, fragment3, "FragmentName"); // container is the id of Layout in xml file()
+                    fragmentTransaction3.replace(R.id.container, fragment3, "Frag3"); // container is the id of Layout in xml file()
                     fragmentTransaction3.commit();
 
                     return true;
@@ -75,7 +71,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
                     setTitle("Welcome Fragment");
                     FragmentFour fragment4 = new FragmentFour();
                     FragmentTransaction fragmentTransaction4 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction4.replace(R.id.container, fragment4, "FragmentName"); // container is the id of Layout in xml file()
+                    fragmentTransaction4.replace(R.id.container, fragment4, "Frag4"); // container is the id of Layout in xml file()
                     fragmentTransaction4.commit();
 
                     return true;

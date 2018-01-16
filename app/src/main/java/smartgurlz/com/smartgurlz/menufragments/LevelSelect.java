@@ -1,22 +1,16 @@
 package smartgurlz.com.smartgurlz.menufragments;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,10 +25,12 @@ import java.util.ArrayList;
 import smartgurlz.com.smartgurlz.CustomListAdapter;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.WelcomeActivity;
+
 import static android.content.ContentValues.TAG;
 
 
-/**@author Abdi & Mads 12-01-18
+/**
+ /**@author Abdi & Mads 12-01-18
  * A simple {@link Fragment} subclass.
  */
 public class LevelSelect extends Fragment implements AdapterView.OnItemClickListener {
@@ -70,13 +66,19 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
         // Required empty public constructor
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+    }
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container2,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_level_select, container, false);
+        View view = inflater.inflate(R.layout.fragment_level_select, container2, false);
 
         // listView = ( ListView ) view.findViewById( R.id.levelList );
 
@@ -92,7 +94,7 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
         CustomListAdapter adapter = new CustomListAdapter(getActivity(), listRank, imgid);
 
 
-        gridView2.setAdapter(adapter);
+
 
 
         gridView2.setAdapter( adapter );
@@ -144,10 +146,10 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
         return view;
     }
 
-    @Override
+/*    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-    }
+    }*/
 }
                                                                                                         

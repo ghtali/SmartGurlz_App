@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
     tools:context="smartgurlz.com.smartgurlz.menufragments.LevelSelect">
 
     <!-- TODO: Update blank fragment layout -->
@@ -15,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/levelbg1" />
+        android:background="@drawable/background2" />
 
     <LinearLayout
         android:layout_width="400dp"
@@ -33,7 +31,7 @@
             android:layout_height="350dp"
             android:clickable="true"
             android:numColumns="3"
-            android:background="@android:color/transparent">
+            android:background="@android:color/transparent" android:focusable="true">
 
         </GridView>
     </LinearLayout>

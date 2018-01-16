@@ -14,13 +14,9 @@ import smartgurlz.com.smartgurlz.R;
 
 public class FirebaseHandler {
 
-
-
     private static final String TAG = FirebaseHandler.class.getSimpleName();
     private FirebaseDatabase mFirebaseInstance;
     public static Score score;
-    //public static levelCheckFirebase;
-
 
     void onStart() {
 
@@ -35,10 +31,9 @@ public class FirebaseHandler {
         final TextView silverPlayerPoints;
         final TextView goldPlayerPoints;
 
-
-        bronzePlayerPoints =  view.findViewById(R.id.bronzePlayerPoints);
-        silverPlayerPoints =  view.findViewById(R.id.silverPlayerPoints);
-        goldPlayerPoints =    view.findViewById(R.id.goldPlayerPoints);
+        bronzePlayerPoints = (TextView) view.findViewById(R.id.bronzePlayerPoints);
+        silverPlayerPoints = (TextView) view.findViewById(R.id.silverPlayerPoints);
+        goldPlayerPoints = (TextView) view.findViewById(R.id.goldPlayerPoints);
 
 
         ValueEventListener scoreListener = new ValueEventListener() {
@@ -50,6 +45,7 @@ public class FirebaseHandler {
                 // Get Score object and use the values to update the UI
                 score = dataSnapshot.getValue(Score.class);
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+
 
                     if (childSnapshot.getKey().equalsIgnoreCase("Bronze")) {
                         bronzePlayerPoints.setText(childSnapshot.getValue().toString());
