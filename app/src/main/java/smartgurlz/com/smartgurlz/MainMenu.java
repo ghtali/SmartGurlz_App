@@ -3,7 +3,6 @@ package smartgurlz.com.smartgurlz;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationMenu;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -16,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import smartgurlz.com.smartgurlz.menufragments.FragmentFour;
-import smartgurlz.com.smartgurlz.menufragments.FragmentOne;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
 import smartgurlz.com.smartgurlz.menufragments.LevelFragment;
@@ -40,14 +38,6 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-       /*    BottomNavigationView bottomNavigationView = (BottomNavigationView)
-
-            findViewById(R.id.navigation);
-
-            bottomNavigationView.getMenu().findItem(R.id.uncheckedItem).setChecked(true);
-            bottomNavigationView.findViewById(R.id.uncheckedItem).setVisibility(View.GONE);
-
-            BottomNavigationViewUtils.disableShiftMode(bottomNavigationView);*/
 
 
 
@@ -118,7 +108,7 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
 
       //  BottomNavigationView bottomNavigation = new BottomNavigationView;
         //mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation =  findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
       //  bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
 

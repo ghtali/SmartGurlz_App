@@ -15,17 +15,14 @@ public class HovedActivity extends FragmentActivity {
     private DatabaseReference mDatabase;
     private FirebaseDatabase mFirebaseInstance;
     private static final String TAG = HovedActivity.class.getSimpleName();
-    //public final List<Score> scores = new ArrayList<>();
 
-
-/*    public static final String ARTIST_NAME = "net.simplifiedcoding.firebasedatabaseexample.artistname";
-    public static final String ARTIST_ID = "net.simplifiedcoding.firebasedatabaseexample.artistid";*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
 
         //Lunching MainMenu class
@@ -39,34 +36,5 @@ public class HovedActivity extends FragmentActivity {
             }
         }, TIME_OUT);
 
-
-        /*
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Levels").child("Score");
-        Log.d("Data øøøøøøøøøøø", mDatabase + " og "); //retrieve all data
-
-
-        ValueEventListener scoreListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("Data øøøøøøøøøøø", mDatabase + " og " + dataSnapshot.toString()); //retrieve all data
-                // Get Score object and use the values to update the UI
-                Score score = dataSnapshot.getValue(Score.class);
-                //Score score = dataSnapshot.getValue(Score.class);
-
-                //Log.d("Data", scores.getBronze() + " " + scores.getGold());
-                // Log.d("Data", dataSnapshot.child("Bronze").toString()); //retrieve specific value of a child
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Score failed, log a message
-                Log.w(TAG, "levels:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mDatabase.addValueEventListener(scoreListener);
-
-        */
     }
 }
