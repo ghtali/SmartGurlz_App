@@ -22,14 +22,14 @@ import smartgurlz.com.smartgurlz.CustomListAdapter;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.WelcomeActivity;
 
-/**
+/**@author Abdi & Mads 12-01-18
  * A simple {@link Fragment} subclass.
  */
 public class LevelSelect extends Fragment implements AdapterView.OnItemClickListener {
 
      TextView  leveltext;
      GridView gridView2;
-     TextView text100;
+
     ImageView imageView;
     Integer[] imgid = new Integer[]{
             R.drawable.lvl1, R.drawable.lock,
@@ -70,7 +70,7 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
            leveltext= (TextView) view.findViewById( R.id.leveltext );
         imageView = ( ImageView ) view.findViewById( R.id.icon );
         gridView2= (GridView) view.findViewById( R.id.gridView2 );
-         TextView txtTitle = (TextView )view.findViewById(R.id.text100);
+
 
                 ;CustomListAdapter adapter = new CustomListAdapter( getActivity(), listRank, imgid);
 
