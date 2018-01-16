@@ -10,14 +10,6 @@
 
 
     <!-- TODO: Update blank fragment layout -->
- <!--   <android.support.design.widget.TextInputLayout
-        android:id="@+id/passwordS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"> -->
 
     <TextView
         android:id="@+id/username_txt"
@@ -47,25 +39,6 @@
         android:textSize="14sp" />
 
 
-
-
-      <!--  <android.support.design.widget.TextInputEditText -->
-    <EditText
-            android:id="@+id/passWord_etx"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="30dp"
-            android:layout_marginEnd="160dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="60dp"
-            android:ems="10"
-            android:hint="Type your password"
-            android:inputType="textPassword"
-            android:textSize="14sp" />
-
-
-
     <TextView
         android:id="@+id/password_txt"
         android:layout_width="wrap_content"
@@ -86,6 +59,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="110dp"
         android:backgroundTint="@color/colorPurplesmart"
         android:text="Log in"
@@ -98,11 +72,10 @@
         android:layout_gravity="center"
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="110dp"
-        android:backgroundTint="@color/colorPurplesmart"
         android:text="Sign up"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/colorPurplesmart" />
 
     <ImageView
         android:id="@+id/smartgurlz_logoet"
@@ -115,13 +88,12 @@
 
     <TextView
         android:id="@+id/forgotPassword"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="150dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="110dp"
         android:clickable="true"
         android:text="Forgot password?"
@@ -129,6 +101,34 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="12sp" />
 
-  <!--  </android.support.design.widget.TextInputLayout> -->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/passwordID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="205dp"
+        app:passwordToggleEnabled="true"
+
+        >
+        <!--  <android.support.design.widget.TextInputEditText -->
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/passWord_etx"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity=""
+            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="160dp"
+            android:layout_marginStart="258dp"
+            android:layout_marginTop="180dp"
+            android:hint="Type your password"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
 </FrameLayout>
 

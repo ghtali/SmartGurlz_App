@@ -2,6 +2,8 @@ package smartgurlz.com.smartgurlz;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,13 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.SmartGurlz.app.UnityPlayerActivity;
 
 
-/**
- * Created by Ali on 27/10/2017.
- */
 
 public class WelcomeActivity extends FragmentActivity {
 
@@ -77,8 +77,8 @@ public class WelcomeActivity extends FragmentActivity {
                 if (v == btnPlay) {
 
                     Toast.makeText(WelcomeActivity.this, "Hello Test", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(),TutorialActivity.class);
+                   startActivity(intent);
                 }
                     finish();
             }

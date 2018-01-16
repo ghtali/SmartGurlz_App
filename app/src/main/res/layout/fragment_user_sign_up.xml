@@ -20,13 +20,19 @@
         tools:ignore="MissingConstraints">
 
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:src="@drawable/logo" />
+
         <TextView
             android:id="@+id/userreg_txt"
-            android:layout_width="wrap_content"
+            android:layout_width="104dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="0dp"
-            android:text="User Registration"
+            android:text="Sign up"
             android:textColor="@android:color/black"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -41,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:hint="Enter username"
             android:inputType="textPersonName" />
 
@@ -79,11 +85,11 @@
             android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/colorPurplesmart"
-            android:text="Register User"
+            android:text="Sign up"
             android:textColor="@color/bg_white" />
 
         <TextView
