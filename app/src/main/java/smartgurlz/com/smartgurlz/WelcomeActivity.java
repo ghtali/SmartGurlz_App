@@ -2,6 +2,8 @@ package smartgurlz.com.smartgurlz;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.PixelFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.SmartGurlz.app.UnityPlayerActivity;
 
@@ -75,6 +78,31 @@ public class WelcomeActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 if (v == btnPlay) {
+
+//                    // Video for tutorial
+//
+//                    Button buttonPlayVideo2 = (Button)findViewById(R.id.btnPlay);
+//                    getWindow().setFormat(PixelFormat.UNKNOWN);
+////displays a video file
+//                    VideoView mVideoView2 = (VideoView)findViewById(R.id.videoView);
+//                    String uriPath2 = "android.resource://com.example.toyo.playvideo/"+R.raw.tutorialvideofinished;
+//                    Uri uri2 = Uri.parse(uriPath2);
+//                    mVideoView2.setVideoURI(uri2);
+//                    mVideoView2.requestFocus();
+//                    mVideoView2.start();
+//                    buttonPlayVideo2.setOnClickListener(new Button.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            VideoView mVideoView2 = (VideoView) findViewById(R.id.videoView);
+//// VideoView mVideoView = new VideoView(this);
+//                            String uriPath = "android.resource://com.example.toyo.playvideo/" + R.raw.tutorialvideofinished;
+//                            Uri uri2 = Uri.parse(uriPath);
+//                            mVideoView2.setVideoURI(uri2);
+//                            mVideoView2.requestFocus();
+//                            mVideoView2.start();
+//                        }
+//                    });
+
 
                     Toast.makeText(WelcomeActivity.this, "Hello Test", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);

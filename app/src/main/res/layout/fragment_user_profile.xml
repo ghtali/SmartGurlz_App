@@ -1,23 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:id="@+id/userprofileLayout"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userprofileLayout"
+    style="@android:style/Widget.DeviceDefault.ScrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToPadding="true"
+    android:fillViewport="true"
+    android:scrollbarStyle="outsideOverlay"
+    android:visibility="visible"
     tools:context="smartgurlz.com.smartgurlz.menufragments.UserProfile">
 
     <!-- TODO: Update blank fragment layout -->
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="15dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/welcome_txt"
@@ -29,13 +30,39 @@
             android:textAlignment="center"
             android:textSize="26sp" />
 
+        <EditText
+            android:id="@+id/emailRe_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Write your email"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/passRe_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Write your current password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/changePass_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="New password"
+            android:inputType="textPassword" />
+
         <Button
             android:id="@+id/changePassword_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginTop="110dp"
             android:layout_marginBottom="0dp"
+            android:layout_marginTop="10dp"
             android:text="Change Password" />
 
         <Button
@@ -51,15 +78,17 @@
             android:id="@+id/delete_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete user"
             android:layout_gravity="bottom"
             android:layout_marginBottom="0dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
+            android:text="Delete user"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark" />
 
 
     </LinearLayout>
 
-</FrameLayout>
+    <!--</ScrollView>-->
+
+</ScrollView>
