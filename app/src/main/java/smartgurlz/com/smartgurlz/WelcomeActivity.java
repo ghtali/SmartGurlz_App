@@ -16,9 +16,6 @@ import android.widget.VideoView;
 import com.SmartGurlz.app.UnityPlayerActivity;
 
 
-/**
- * Created by Ali on 27/10/2017.
- */
 
 public class WelcomeActivity extends FragmentActivity {
 
@@ -79,34 +76,9 @@ public class WelcomeActivity extends FragmentActivity {
             public void onClick(View v) {
                 if (v == btnPlay) {
 
-//                    // Video for tutorial
-//
-//                    Button buttonPlayVideo2 = (Button)findViewById(R.id.btnPlay);
-//                    getWindow().setFormat(PixelFormat.UNKNOWN);
-////displays a video file
-//                    VideoView mVideoView2 = (VideoView)findViewById(R.id.videoView);
-//                    String uriPath2 = "android.resource://com.example.toyo.playvideo/"+R.raw.tutorialvideofinished;
-//                    Uri uri2 = Uri.parse(uriPath2);
-//                    mVideoView2.setVideoURI(uri2);
-//                    mVideoView2.requestFocus();
-//                    mVideoView2.start();
-//                    buttonPlayVideo2.setOnClickListener(new Button.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            VideoView mVideoView2 = (VideoView) findViewById(R.id.videoView);
-//// VideoView mVideoView = new VideoView(this);
-//                            String uriPath = "android.resource://com.example.toyo.playvideo/" + R.raw.tutorialvideofinished;
-//                            Uri uri2 = Uri.parse(uriPath);
-//                            mVideoView2.setVideoURI(uri2);
-//                            mVideoView2.requestFocus();
-//                            mVideoView2.start();
-//                        }
-//                    });
-
-
                     Toast.makeText(WelcomeActivity.this, "Hello Test", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(),TutorialActivity.class);
+                   startActivity(intent);
                 }
                     finish();
             }
