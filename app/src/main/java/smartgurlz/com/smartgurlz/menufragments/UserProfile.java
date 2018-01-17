@@ -94,10 +94,10 @@ public class UserProfile extends Fragment {
                                                               @Override
                                                               public void onComplete(@NonNull Task<Void> task) {
                                                                   if (task.isSuccessful()) {
-                                                                      Toast.makeText(getActivity(), "User accounte deleted.", Toast.LENGTH_SHORT).show();
+                                                                      Toast.makeText(getActivity(), "Your account has been deleted.", Toast.LENGTH_SHORT).show();
 
                                                                   } else {
-                                                                      Toast.makeText(getActivity(), "Error not deleted", Toast.LENGTH_SHORT).show();
+                                                                      Toast.makeText(getActivity(), "Error - could not delete your account", Toast.LENGTH_SHORT).show();
                                                                   }
                                                               }
                                                           });

@@ -161,11 +161,11 @@ public class UserSignUp extends Fragment {
                                 Toast.makeText(getActivity(), "This email is already registered",Toast.LENGTH_SHORT ).show();
                             } else{
                                 Log.d("ERROR", "Error" + task.getException());
-                                Toast.makeText(getActivity().getApplicationContext(), "ERROR" + task.getException(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity().getApplicationContext(), "Oops! Something went wrong - please try again", Toast.LENGTH_LONG).show();
                             }
 
                         } else {
-                            Toast.makeText(getActivity().getApplicationContext(), "Registered successfully!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity().getApplicationContext(), "Thanks for signing up!", Toast.LENGTH_LONG).show();
                             saveUsername();
                             username_edt.getText().clear();
                         }
