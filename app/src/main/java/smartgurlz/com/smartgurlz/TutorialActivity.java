@@ -45,7 +45,7 @@ public class TutorialActivity extends AppCompatActivity {
 
         mediaController = new MediaController(this  );
 
-        String videoPath = "android.resource://smartgurlz.com.smartgurlz/"+R.raw.tutorialvideofinished;
+        String videoPath = "android.resource://smartgurlz.com.smartgurlz/"+R.raw.movietutorial;
 
         getWindow().setFormat( PixelFormat.UNKNOWN);
 
