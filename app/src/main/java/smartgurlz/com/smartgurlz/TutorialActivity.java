@@ -1,6 +1,7 @@
 package smartgurlz.com.smartgurlz;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -26,17 +27,19 @@ public class TutorialActivity extends AppCompatActivity {
     MediaController mediaController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_tutorial );
 
 //                    // Video for tutorial
-        VideoView videov = ( VideoView ) findViewById( R.id.videoView );
-        Button btnskip = ( Button ) findViewById( R.id.btnskip );
+        VideoView videov = findViewById( R.id.videoView );
+        Button btnskip = findViewById( R.id.btnskip );
         btnskip.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(new Intent(TutorialActivity.this, UnityPlayerActivity.class));
+                finish();
             }
         } );
 

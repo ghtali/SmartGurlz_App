@@ -30,6 +30,7 @@
         <activity android:name=".GameActivity" />
         <activity android:name=".HighscoreActivity" />
         <activity android:name=".MainMenu" />
+        <activity android:name=".TutorialActivity" />
 
     </application>
 
