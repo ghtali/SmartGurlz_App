@@ -38,7 +38,7 @@ public class UserProfile extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private String newPassword;
-    boolean isLoggedIn, uiUpdated;
+
 
     public UserProfile() {
         // Required empty public constructor
@@ -59,12 +59,10 @@ public class UserProfile extends Fragment {
         passRe_edt = (EditText) view.findViewById(R.id.passRe_edt);
         ScrollView Userprofile=view.findViewById(R.id.userprofileLayout);
 
-       // changePass_txt.setVisibility(View.INVISIBLE);
-      //  emailRe_edt.setVisibility(View.INVISIBLE);
-      //  passRe_edt.setVisibility(View.INVISIBLE);
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         mAuth = FirebaseAuth.getInstance();
+       // changePass_txt.setVisibility(View.INVISIBLE);
+
 
 
         if (user != null) {
@@ -107,33 +105,13 @@ public class UserProfile extends Fragment {
                                                   });
                                               }
                                           });
-            /*    user.delete()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getActivity(), "User account deleted.", Toast.LENGTH_LONG).show();
-                                    //Log the user out and goes back to login screen
-                                    mAuth.signOut();
-                                    FragmentTwo loginfragt = new FragmentTwo();
-                                    FragmentTransaction fragmentTransaction2 = getFragmentManager().beginTransaction();
-                                    fragmentTransaction2.replace(R.id.container, loginfragt, "FragmentName"); // fram is the id of FrameLayout in xml file()
-                                    fragmentTransaction2.commit();
-                                } else{
-                                    Toast.makeText(getActivity(), "Error - account not deleted", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
-                 }*/
+
 
 
         changePassword_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                // reAuth();
 
-                //    changePassword_btn.setText("OK");
-                //  changePass_txt.setVisibility(View.VISIBLE);
 
                 newPassword = changePass_txt.getText().toString().trim();
                 AuthCredential credential = EmailAuthProvider.getCredential(emailRe_edt.getText().toString().trim(), passRe_edt.getText().toString().trim());
@@ -142,40 +120,34 @@ public class UserProfile extends Fragment {
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
+
                                 if (task.isSuccessful()) {
                                     user.updatePassword(newPassword)
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
-                                                    if (task.isSuccessful()) {
-                                                        Toast.makeText(getActivity(), "Password updated", Toast.LENGTH_SHORT).show();
-                                                    } else {
-                                                        Toast.makeText(getActivity(), "Error - password not updated", Toast.LENGTH_SHORT).show();
+                                                    if (newPassword.length() >= 6) {
+
+                                                        if (task.isSuccessful()) {
+
+                                                            Toast.makeText(getActivity(), "Password updated", Toast.LENGTH_SHORT).show();
+                                                            emailRe_edt.getText().clear();
+                                                            passRe_edt.getText().clear();
+                                                            changePass_txt.getText().clear();
+                                                            
+
+                                                        } else {
+                                                            Toast.makeText(getActivity(), "Error - password not updated", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    }else{
+                                                        Toast.makeText(getActivity(),"The minimum password length should be at least 6 characters long", Toast.LENGTH_LONG).show();
                                                     }
-                                                }
-                                            });
+                                                } });
                                 } else {
                                     Toast.makeText(getActivity(), "Authentication failed", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-
-
-        /*        newPassword = changePass_txt.getText().toString();
-                if(isLoggedIn==true) {
-                    user.updatePassword(newPassword)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "User password updated.", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(getActivity(), "Error - password not updated " + task.getException(), Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                }
-            }*/
             }
         });
 
@@ -186,44 +158,9 @@ public class UserProfile extends Fragment {
 
 
         return view;
-        // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_user_profile, container, false);
+
     }
 
-  /*  private void reAuth(){
-        Toast.makeText(getActivity(), "We need you to reauthenticate yourself", Toast.LENGTH_SHORT).show();
-       /* emailRe_edt.setVisibility(View.VISIBLE);
-        passRe_edt.setVisibility(View.VISIBLE);
-        changePassword_btn.setText("OK");
-        //updateUI();
-        AuthCredential credential = EmailAuthProvider.getCredential(emailRe_edt.getText().toString(), passRe_edt.getText().toString().trim());
 
-        //if(uiUpdated) {
-            user.reauthenticate(credential)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(getActivity(), "You are logged in", Toast.LENGTH_SHORT).show();
-                                isLoggedIn = true;
-
-                            } else {
-                                Toast.makeText(getActivity(), "Couldn't log in ", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-
-                    });
-        //}else{
-          //  Toast.makeText(getActivity(), "fucked again", Toast.LENGTH_LONG).show();
-        //}
-    }*/
-
-    /*private void updateUI(){
-        passRe_edt.setVisibility(View.VISIBLE);
-        emailRe_edt.setVisibility(View.VISIBLE);
-        changePassword_btn.setText("OK");
-        uiUpdated = true;
-
-    } */
 }
 
