@@ -154,6 +154,12 @@ public class FragmentTwo extends Fragment  {
             password_input.requestFocus();
             return;
         }
+
+        if(password.length() >= 25){
+            password_input.setError("The maximum password length is 25 characters long");
+            password_input.requestFocus();
+            return;
+        }
         auth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
             @Override
