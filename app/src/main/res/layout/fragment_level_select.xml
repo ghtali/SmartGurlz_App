@@ -13,25 +13,31 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/background2" />
+        android:background="@drawable/levelbg" />
 
     <LinearLayout
-        android:layout_width="400dp"
+        android:layout_width="300dp"
         android:layout_height="300dp"
+
+
         android:layout_alignParentEnd="true"
+
         android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        android:background="@android:color/transparent">
+        android:layout_gravity="clip_horizontal"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
 
         <GridView
 
             android:id="@+id/gridView2"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="350dp"
+
+            android:background="@android:color/transparent"
             android:clickable="true"
-            android:numColumns="3"
-            android:background="@android:color/transparent" android:focusable="true">
+            android:focusable="true"
+            android:numColumns="3">
 
         </GridView>
     </LinearLayout>

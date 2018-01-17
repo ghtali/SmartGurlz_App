@@ -31,9 +31,13 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_tutorial );
 
-//                    // Video for tutorial
-        VideoView videov = findViewById( R.id.videoView );
-        Button btnskip = findViewById( R.id.btnskip );
+                  //init knapper
+
+
+        Button btnskip = (Button ) findViewById( R.id.btnskip );
+        VideoView videov = ( VideoView ) findViewById( R.id.videoView );
+
+//skip knap
         btnskip.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +46,7 @@ public class TutorialActivity extends AppCompatActivity {
                 finish();
             }
         } );
+
 
         mediaController = new MediaController(this  );
 
@@ -64,5 +69,4 @@ public class TutorialActivity extends AppCompatActivity {
     }
 
 
-    }
-
+}
