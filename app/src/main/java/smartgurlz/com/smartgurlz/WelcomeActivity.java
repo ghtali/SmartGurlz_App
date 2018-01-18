@@ -13,12 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.SmartGurlz.app.UnityPlayerActivity;
-
-
 
 public class WelcomeActivity extends FragmentActivity {
-
 
     public Button btnNext12;
     private Button btnPlay;

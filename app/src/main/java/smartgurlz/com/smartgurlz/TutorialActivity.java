@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import com.SmartGurlz.app.UnityPlayerActivity;
+
 /*@Author abdi ... 16-01-18
 *
 * */
