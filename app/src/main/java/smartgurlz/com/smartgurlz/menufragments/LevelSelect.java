@@ -13,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import smartgurlz.com.smartgurlz.CustomListAdapter;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.WelcomeActivity;
@@ -26,7 +24,6 @@ import smartgurlz.com.smartgurlz.WelcomeActivity;
  */
 public class LevelSelect extends Fragment implements AdapterView.OnItemClickListener {
 
-    private ArrayList<String> myList = new ArrayList<>();
     TextView leveltext;
     GridView gridView2;
     ImageView imageView;

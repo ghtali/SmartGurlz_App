@@ -12,6 +12,7 @@ android {
         applicationId "smartgurlz.com.smartgurlz"
         minSdkVersion 21
         targetSdkVersion 25
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
