@@ -124,8 +124,8 @@ public class MainMenu extends AppCompatActivity implements LevelSelect.OnListFra
         findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
     }
 
-//    @Override
-//    public void onListFragmentInteraction(DummyContent.DummyItem item) {
-//
-//    }
+/*    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
+   }*/
 }
