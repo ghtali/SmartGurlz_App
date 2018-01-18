@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import com.SmartGurlz.app.UnityPlayerActivity;
+//import com.SmartGurlz.app.UnityPlayerActivity;
 
 
 

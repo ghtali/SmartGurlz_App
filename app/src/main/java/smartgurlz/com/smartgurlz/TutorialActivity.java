@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import com.SmartGurlz.app.UnityPlayerActivity;
+//import com.SmartGurlz.app.UnityPlayerActivity;
 /*@Author abdi ... 16-01-18
 *
 * */
@@ -39,7 +39,7 @@ public class TutorialActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(new Intent(TutorialActivity.this, UnityPlayerActivity.class));
-                finish();
+                //finish();
             }
         } );
 
