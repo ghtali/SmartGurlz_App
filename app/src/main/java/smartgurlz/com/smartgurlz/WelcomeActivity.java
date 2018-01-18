@@ -8,11 +8,10 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import smartgurlz.com.smartgurlz.menufragments.LevelSelect;
 
-/**@author Flemming & Ali
+/**@author Flemming & Ali & Abdi
  *
  */
 
@@ -76,7 +75,6 @@ public class WelcomeActivity extends FragmentActivity {
             public void onClick(View v) {
                 if (v == btnPlay) {
 
-                    Toast.makeText(WelcomeActivity.this, "Hello Test", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(WelcomeActivity.this, TutorialActivity.class);
                     startActivity(i);
                     finish();
