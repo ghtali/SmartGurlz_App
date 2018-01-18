@@ -20,7 +20,7 @@ public class FirebaseHandler {
 
     private static final String TAG = FirebaseHandler.class.getSimpleName();
     private FirebaseDatabase mFirebaseInstance;
-    public static Score score;
+   // public static Score score;
 
     void onStart() {
 
@@ -47,7 +47,7 @@ public class FirebaseHandler {
 
                 Log.d("Data øøøøøøøøøøø", dataSnapshot.toString()); //retrieve all data
                 // Get Score object and use the values to update the UI
-                score = dataSnapshot.getValue(Score.class);
+              //  score = dataSnapshot.getValue(Score.class);
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
 
 
