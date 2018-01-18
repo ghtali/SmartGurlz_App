@@ -77,10 +77,10 @@ public class WelcomeActivity extends FragmentActivity {
                 if (v == btnPlay) {
 
                     Toast.makeText(WelcomeActivity.this, "Hello Test", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),TutorialActivity.class);
-                   startActivity(intent);
-                }
+                    Intent i = new Intent(WelcomeActivity.this, TutorialActivity.class);
+                    startActivity(i);
                     finish();
+                }
             }
         });
 

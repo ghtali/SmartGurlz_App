@@ -4,7 +4,6 @@ package smartgurlz.com.smartgurlz.menufragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,19 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 
 import smartgurlz.com.smartgurlz.CustomListAdapter;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.WelcomeActivity;
-
-import static android.content.ContentValues.TAG;
 
 
 /**
@@ -89,52 +80,24 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
 
            leveltext= (TextView) view.findViewById( R.id.leveltext );
         imageView = ( ImageView ) view.findViewById( R.id.icon );
-        gridView2= (GridView) view.findViewById( R.id.gridView2 );
 
         CustomListAdapter adapter = new CustomListAdapter(getActivity(), listRank, imgid);
 
 
-
-
-
         gridView2.setAdapter( adapter );
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Levels").child("LevelNumbers");
-
-
-        ValueEventListener levelListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-
-                myList.add("" + dataSnapshot.getValue());
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Score failed, log a message
-                Log.w(TAG, "levels:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mDatabase.addValueEventListener(levelListener);
-
 
         gridView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (myList.size() == 0) return;
-                String tekst = myList.get(position);
-                System.out.println("Tekst i onItemClick: " + tekst);
+            public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
 
-                if (tekst.equalsIgnoreCase("1")) {
+                if (position !=0 ){
 
-                    startActivity(new Intent(getActivity().getApplicationContext(), WelcomeActivity.class));
+                    Toast.makeText( getActivity(),"level låst" , Toast.LENGTH_LONG ).show();
 
-                } else {
+                }
+                else {
+                    startActivity( new Intent( getActivity().getApplicationContext(), WelcomeActivity.class ) );
 
-                    Toast.makeText(getActivity(), "level låst" + "\nDu har ikke nok point ", Toast.LENGTH_LONG).show();
                 }
 
 
@@ -146,10 +109,4 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
         return view;
     }
 
-/*    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-    }*/
 }
-                                                                                                        

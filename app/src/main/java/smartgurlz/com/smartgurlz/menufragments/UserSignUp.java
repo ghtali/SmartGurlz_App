@@ -64,30 +64,13 @@ public class UserSignUp extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-      //  username_edt = (EditText) view.findViewById(R.id.username_edt);
-
-        //Toast.makeText(getActivity().getApplicationContext(), "Vi kommer ind", Toast.LENGTH_LONG).show();
-
-        // if (firebaseAuth.getCurrentUser() != null) {
-
-        //UserProfile userProfile = new UserProfile();
-        //FragmentManager fragmentManager = getFragmentManager();
-        //fragmentManager.beginTransaction().replace(R.id.userprofileLayout, userProfile).commit();
-
-
         buttonRegister = (Button) view.findViewById(R.id.buttonRegister);
 
         editTextEmail = (EditText) view.findViewById(R.id.editTextEmail);
 
         getEditTextPassword = (EditText) view.findViewById(R.id.editTextPassword);
 
-        // textViewSignIn = (TextView) view.findViewById(R.id.textViewSignIn);
-
         already_txt = (TextView) view.findViewById(R.id.already_txt);
-
-        //buttonRegister.setOnClickListener((View.OnClickListener) this);
-
-        // textViewSignIn.setOnClickListener((View.OnClickListener) this);
 
         username_edt = (EditText) view.findViewById(R.id.username_edt);
 
@@ -95,24 +78,10 @@ public class UserSignUp extends Fragment {
             @Override
             public void onClick(View v) {
                 registerUser();
-             //   saveUsername();
-             //   username_edt.getText().clear();
+
                 editTextEmail.getText().clear();
                 getEditTextPassword.getText().clear();
-               // username_edt.getText().clear();
-/*                if(editTextEmail.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Please enter your email", Toast.LENGTH_LONG).show();
-                }
-                if(getEditTextPassword.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Please enter your password", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    generateUser();
-                    registerUser(editTextEmail.getText().toString().trim(), getEditTextPassword.getText().toString().trim());
-                    editTextEmail.getText().clear();
-                    getEditTextPassword.getText().clear();
-                    username_edt.getText().clear();
-                }*/
+
 
             }
         });
@@ -132,31 +101,7 @@ public class UserSignUp extends Fragment {
 
         });
 
-        //}
-/*
-        final Button loginButton = (Button)findViewById(R.id.login_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String enteredEmail = emailInput.getText().toString();
-                String enteredPassword = passwordInput.getText().toString();
 
-                if(TextUtils.isEmpty(enteredEmail) || TextUtils.isEmpty(enteredPassword)){
-                    Helper.displayMessageToast(SignUpActivity.this, "Login fields must be filled");
-                    return;
-                }
-                if(!Helper.isValidEmail(enteredEmail)){
-                    Helper.displayMessageToast(SignUpActivity.this, "Invalidate email entered");
-                    return;
-                }
-
-                ((FirebaseApplication)getApplication()).createNewUser(SignUpActivity.this, enteredEmail, enteredPassword, loginError);
-            }
-        });
-    }
-    */
-
-        // return inflater.inflate(R.layout.fragment_user_sign_up, container, false);
         return view;
 
     }
@@ -168,10 +113,7 @@ public class UserSignUp extends Fragment {
 
             //email can't be empty
             if (email.isEmpty()) {
-                //email is empty
-                // Toast.makeText(getActivity(),"Please enter your email!", Toast.LENGTH_LONG).show();
-                //Stop the function from executing further
-                //  return null;
+
                 editTextEmail.setError("Email is required");
                 editTextEmail.requestFocus();
                 return;
@@ -189,32 +131,20 @@ public class UserSignUp extends Fragment {
                 getEditTextPassword.setError("Password is required");
                 getEditTextPassword.requestFocus();
                 return;
-                //password is empty
-                // Toast.makeText(getActivity(), "Please enter password", Toast.LENGTH_LONG).show();
-                //Stop the function from executing further
-                // return null;
+
             }
             if(password.length()<6){
                 getEditTextPassword.setError("Minimum passwordlength should be 6 characters");
                 getEditTextPassword.requestFocus();
                 return;
             }
-       /* if (TextUtils.isEmpty(email)) {
-            //email is empty
-            //  Toast.makeText(getActivity(),"Please enter your email!", Toast.LENGTH_LONG).show();
-            //Stop the function from executing further
-            //  return null;
 
-        }
-        if (TextUtils.isEmpty(password)) {
-            //password is empty
-            //  Toast.makeText(getActivity(), "Please enter password", Toast.LENGTH_LONG).show();
-            //Stop the function from executing further
-            // return null;
-        }*/
+            if(password.length() >= 25){
+                getEditTextPassword.setError("The maximum password length is 25 characters long");
+                getEditTextPassword.requestFocus();
+                return;
+            }
 
-        //if validations are ok
-        //then will first show a progressDialog
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
@@ -222,7 +152,7 @@ public class UserSignUp extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                        // saveUsername();
                         if (!task.isSuccessful()) {
-                            //user is successfully registered and logged in
+                            //user is successfully registered
                             //we will start the profile activity here
                             //show the user a message with Toast
 
@@ -231,11 +161,11 @@ public class UserSignUp extends Fragment {
                                 Toast.makeText(getActivity(), "This email is already registered",Toast.LENGTH_SHORT ).show();
                             } else{
                                 Log.d("ERROR", "Error" + task.getException());
-                                Toast.makeText(getActivity().getApplicationContext(), "ERROR" + task.getException(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity().getApplicationContext(), "Oops! Something went wrong - please try again", Toast.LENGTH_LONG).show();
                             }
 
                         } else {
-                            Toast.makeText(getActivity().getApplicationContext(), "Registered successfully!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity().getApplicationContext(), "Thanks for signing up!", Toast.LENGTH_LONG).show();
                             saveUsername();
                             username_edt.getText().clear();
                         }
@@ -275,24 +205,6 @@ public class UserSignUp extends Fragment {
 
     }
 
-   /* public void generateUser() {
-        String username = username_edt.getText().toString().trim();
-        UserControl userInformation = new UserControl(username);
 
-        FirebaseUser bruger = firebaseAuth.getCurrentUser();
-
-
-        mDatabase.child("user").child("userID").child(bruger.getUid()).setValue(userInformation);
-        Toast.makeText(getActivity(), "Username saved...", Toast.LENGTH_LONG).show();
-
-        // mDatabase.child("user").child("userID").setValue(userInformation);
-
-
-           /* FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference user = database.getReference("user");
-            UserProfile user = new UserProfile(username, password);
-            users.push().setValue(user);*/
-
-  //  }
 
 }
