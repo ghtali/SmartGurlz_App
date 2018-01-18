@@ -17,15 +17,15 @@ import android.widget.TextView;
 import smartgurlz.com.smartgurlz.menufragments.FragmentFour;
 import smartgurlz.com.smartgurlz.menufragments.FragmentThree;
 import smartgurlz.com.smartgurlz.menufragments.FragmentTwo;
-import smartgurlz.com.smartgurlz.menufragments.LevelFragment;
+//import smartgurlz.com.smartgurlz.menufragments.LevelFragment;
 import smartgurlz.com.smartgurlz.menufragments.LevelSelect;
-import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent;
+//import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent;
 
 /**@author Flemming & Ali & Abdi & Ana-Maria & Mads
  *
  */
 
-public class MainMenu extends AppCompatActivity implements LevelFragment.OnListFragmentInteractionListener{
+public class MainMenu extends AppCompatActivity implements LevelSelect.OnListFragmentInteractionListener{
 
     private TextView mTextMessage;
 
@@ -124,8 +124,8 @@ public class MainMenu extends AppCompatActivity implements LevelFragment.OnListF
         findViewById(R.id.navigation_welcome).setVisibility(View.GONE);
     }
 
-    @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
-        
-    }
+//    @Override
+//    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+//
+//    }
 }

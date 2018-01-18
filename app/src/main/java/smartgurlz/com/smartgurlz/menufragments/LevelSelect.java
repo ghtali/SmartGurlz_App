@@ -106,4 +106,6 @@ public class LevelSelect extends Fragment implements AdapterView.OnItemClickList
         return view;
     }
 
+    public interface OnListFragmentInteractionListener {
+    }
 }
