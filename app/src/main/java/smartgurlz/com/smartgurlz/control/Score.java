@@ -6,6 +6,10 @@ public final class Score{
     private Long bronze;
     private Long highScore;
 
+    /**@author Flemming & Ali
+     *
+     */
+
     public Score(){
 
     }

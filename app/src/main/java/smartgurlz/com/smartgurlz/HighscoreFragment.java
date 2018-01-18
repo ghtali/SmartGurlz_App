@@ -1,7 +1,6 @@
 package smartgurlz.com.smartgurlz;
 
 import android.graphics.Color;
-import android.graphics.drawable.shapes.Shape;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +11,10 @@ import android.widget.Toast;
 
 import nl.dionsegijn.konfetti.KonfettiView;
 import nl.dionsegijn.konfetti.models.Size;
+
+/**@author Flemming & Ali
+ *
+ */
 
 public class HighscoreFragment extends Fragment {
 

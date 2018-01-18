@@ -19,7 +19,7 @@ import smartgurlz.com.smartgurlz.WelcomeActivity;
 
 
 /**
- /**@author Abdi & Mads 12-01-18
+ /**@author Abdi & Mads & Ali 12-01-18
  * A simple {@link Fragment} subclass.
  */
 public class LevelSelect extends Fragment implements AdapterView.OnItemClickListener {

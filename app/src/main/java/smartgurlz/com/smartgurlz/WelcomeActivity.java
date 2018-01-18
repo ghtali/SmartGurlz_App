@@ -12,7 +12,9 @@ import android.widget.Toast;
 
 import smartgurlz.com.smartgurlz.menufragments.LevelSelect;
 
-
+/**@author Flemming & Ali
+ *
+ */
 
 
 public class WelcomeActivity extends FragmentActivity {
@@ -98,7 +100,7 @@ public class WelcomeActivity extends FragmentActivity {
 
 
     private void launchHomeScreen() {
-        prefManager.setFirstTimeLaunch(false); //Setting to the true just for test (it should be false)
+        prefManager.setFirstTimeLaunch(true); //Setting to the true just for test (it should be false)
         startActivity(new Intent(WelcomeActivity.this, LevelSelect.class));
         //finish();
     }

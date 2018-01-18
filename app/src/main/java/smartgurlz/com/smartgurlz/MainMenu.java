@@ -21,6 +21,10 @@ import smartgurlz.com.smartgurlz.menufragments.LevelFragment;
 import smartgurlz.com.smartgurlz.menufragments.LevelSelect;
 import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent;
 
+/**@author Flemming & Ali & Abdi & Ana-Maria & Mads
+ *
+ */
+
 public class MainMenu extends AppCompatActivity implements LevelFragment.OnListFragmentInteractionListener{
 
     private TextView mTextMessage;

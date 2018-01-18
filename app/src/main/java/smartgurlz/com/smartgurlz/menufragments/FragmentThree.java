@@ -14,7 +14,7 @@ import nl.dionsegijn.konfetti.models.Size;
 import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.control.FirebaseHandler;
 
-/**
+/**@author Ali & Flemming
  * A simple {@link Fragment} subclass.
  *
  */

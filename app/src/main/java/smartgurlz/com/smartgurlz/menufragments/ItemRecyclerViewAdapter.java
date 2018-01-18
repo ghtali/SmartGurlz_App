@@ -12,7 +12,7 @@ import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.menufragments.LevelFragment.OnListFragmentInteractionListener;
 import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent.DummyItem;
 
-/**
+/**@author Ali & Flemming
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.

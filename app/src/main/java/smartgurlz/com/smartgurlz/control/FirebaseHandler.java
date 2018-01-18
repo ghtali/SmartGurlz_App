@@ -12,6 +12,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import smartgurlz.com.smartgurlz.R;
 
+/**@author Flemming & Ali
+ *
+ */
+
 public class FirebaseHandler {
 
     private static final String TAG = FirebaseHandler.class.getSimpleName();
