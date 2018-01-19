@@ -6,10 +6,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 
 /**
- * Created by flemm on 28-11-2017.
+ * Created by Flemming on 28-11-2017.
  */
 
 public class HighScoreAdapter extends BaseAdapter {

@@ -3,7 +3,7 @@ package smartgurlz.com.smartgurlz;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
+/**@author Ali & Flemming
  * Created by Ali on 26/10/2017.
  */
 

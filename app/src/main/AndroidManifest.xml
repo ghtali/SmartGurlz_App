@@ -31,6 +31,7 @@
         <activity android:name=".HighscoreActivity" />
         <activity android:name=".MainMenu" />
         <activity android:name=".TutorialActivity" />
+        <activity android:name=".UnityPlayerActivity" />
 
     </application>
 

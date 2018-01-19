@@ -9,6 +9,10 @@ import android.support.v4.app.FragmentActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**@author Flemming & Ali
+ *
+ */
+
 public class HovedActivity extends FragmentActivity {
 
     private static int TIME_OUT = 4000; //Time to launch the another activity

@@ -1,3 +1,4 @@
+/*
 package smartgurlz.com.smartgurlz.control;
 
 public final class Score{
@@ -5,6 +6,12 @@ public final class Score{
     private Long silver;
     private Long bronze;
     private Long highScore;
+
+    */
+/**@author Flemming & Ali
+     *
+     *//*
+
 
     public Score(){
 
@@ -50,7 +57,7 @@ public final class Score{
         return highScore;
     }
 
-/*    @Exclude
+    @Exclude
     public Map<Long, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put(String.valueOf("Gold"), gold);
@@ -59,7 +66,8 @@ public final class Score{
         result.put(String.valueOf("HighScore"), highScore);
 
         return result;
-    }*/
+    }
 
 }
 
+*/

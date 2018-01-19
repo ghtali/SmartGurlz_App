@@ -1,3 +1,4 @@
+/*
 package smartgurlz.com.smartgurlz.menufragments;
 
 import android.support.v7.widget.RecyclerView;
@@ -12,11 +13,13 @@ import smartgurlz.com.smartgurlz.R;
 import smartgurlz.com.smartgurlz.menufragments.LevelFragment.OnListFragmentInteractionListener;
 import smartgurlz.com.smartgurlz.menufragments.dummy.DummyContent.DummyItem;
 
-/**
+*/
+/**@author Ali & Flemming
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
- */
+ *//*
+
 public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
@@ -76,3 +79,4 @@ public class ItemRecyclerViewAdapter extends RecyclerView.Adapter<ItemRecyclerVi
         }
     }
 }
+*/
