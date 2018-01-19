@@ -9,15 +9,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import smartgurlz.com.smartgurlz.menufragments.LevelSelect;
 
 /**@author Flemming & Ali & Abdi
  *
  */
 
+=======
+>>>>>>> master
 
 public class WelcomeActivity extends FragmentActivity {
-
 
     public Button btnNext12;
     private Button btnPlay;

@@ -12,10 +12,20 @@ import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
+<<<<<<< HEAD
 /**@author Mads & Abdi 17-01-18
  * A simple {@link AppCompatActivity} subclass.
  *
  */
+=======
+
+/*@Author abdi ... 16-01-18
+*
+* */
+/*@Author Mads ... 16-01-18
+*
+* */
+>>>>>>> master
 public class TutorialActivity extends AppCompatActivity {
 
     Button btnskip;
